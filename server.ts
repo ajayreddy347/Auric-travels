@@ -24,7 +24,7 @@ import { runMigrations } from './server/db/migrate';
 dotenv.config();
 
 const app = express();
-const PORT = 3000;
+const PORT = parseInt(process.env.PORT || '3000', 10);
 
 // Production Security Headers
 app.use((_req, res, next) => {
