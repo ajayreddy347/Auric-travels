@@ -19,8 +19,12 @@ import { LUXURY_STAYS } from './src/data/staysData';
 import { hashPassword, comparePassword, generateToken } from './server/authUtils';
 import { requireAuth, optionalAuth, AuthenticatedRequest } from './server/middleware/authMiddleware';
 import { testConnection } from './server/config/db';
-import { runMigrations } from './server/db/migrate';
-import { enrichDestinationWithPlacesPhotos, resolveDestinationPhotos } from './server/services/placesPhotoService';
+import {
+  enrichDestinationWithPlacesPhotos,
+  resolveDestinationPhotos,
+  resolveEntityPhoto,
+  resolveItineraryActivitiesBatch,
+} from './server/services/placesPhotoService';
 
 dotenv.config();
 
@@ -2144,6 +2148,82 @@ app.get('/api/places/photo', async (req, res) => {
   } catch (err: any) {
     console.error('[Place Photo Proxy Exception]:', err);
     return res.redirect('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&q=80');
+  }
+});
+
+/**
+ * POST /api/places/resolve-entity
+ * Resolves a real Google Places photo for ANY individual Landmark, Hotel, Stay, Experience, or Activity
+ */
+app.post('/api/places/resolve-entity', async (req, res) => {
+  try {
+    const { title, location, category, city, state, country, existingImage, excludePlaceIds } = req.body || {};
+
+    if (!title || typeof title !== 'string') {
+      return res.status(400).json({ success: false, error: 'Entity title is required' });
+    }
+
+    const resolved = await resolveEntityPhoto(
+      {
+        title,
+        location,
+        category,
+        city,
+        state,
+        country,
+        existingImage,
+        excludePlaceIds,
+      },
+      GOOGLE_MAPS_API_KEY
+    );
+
+    return res.json({
+      success: true,
+      ...resolved,
+      timestamp: new Date().toISOString(),
+    });
+  } catch (err: any) {
+    console.error('[POST /api/places/resolve-entity Error]:', err);
+    return res.status(500).json({
+      success: false,
+      error: 'Failed to resolve entity photo',
+      details: err?.message || 'Internal server error',
+    });
+  }
+});
+
+/**
+ * POST /api/places/resolve-itinerary
+ * Resolves distinct Google Places photos for every single activity in an itinerary with collision prevention
+ */
+app.post('/api/places/resolve-itinerary', async (req, res) => {
+  try {
+    const { destination = '', locationContext = '', items = [] } = req.body || {};
+
+    if (!Array.isArray(items) || items.length === 0) {
+      return res.status(400).json({ success: false, error: 'Items array is required' });
+    }
+
+    const resolvedMap = await resolveItineraryActivitiesBatch(
+      destination,
+      locationContext,
+      items,
+      GOOGLE_MAPS_API_KEY
+    );
+
+    return res.json({
+      success: true,
+      resolvedItems: resolvedMap,
+      totalResolved: Object.keys(resolvedMap).length,
+      timestamp: new Date().toISOString(),
+    });
+  } catch (err: any) {
+    console.error('[POST /api/places/resolve-itinerary Error]:', err);
+    return res.status(500).json({
+      success: false,
+      error: 'Failed to resolve itinerary activities batch',
+      details: err?.message || 'Internal server error',
+    });
   }
 });
 

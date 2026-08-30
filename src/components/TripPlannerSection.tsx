@@ -68,6 +68,7 @@ import {
   formatINR,
   formatUSD,
   BUDGET_TIER_CONFIG,
+  enrichTripWithPlacesPhotos,
 } from '../utils/tripGenerator';
 import {
   fetchPlaceAutocomplete,
@@ -344,6 +345,14 @@ export const TripPlannerSection: React.FC<TripPlannerSectionProps> = ({
       setActiveTab('mytrip');
       setSelectedDayFilter('all');
       showToast(`Generated custom ${durationDays}-day itinerary for ${generated.destinationName}!`);
+
+      // Asynchronously enrich all activities with distinct Google Places photos
+      enrichTripWithPlacesPhotos(generated).then((enriched) => {
+        if (enriched) {
+          setActiveTrip(enriched);
+          setActiveTripInStorage(enriched);
+        }
+      });
     }, 900);
   };
 

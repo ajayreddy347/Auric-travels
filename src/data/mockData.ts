@@ -2001,10 +2001,17 @@ export const DESTINATIONS: Destination[] = [
     vibe: ['UNESCO Wonder', 'Imperial Romance', 'Marble Masterpieces', 'Mughal History'],
     highlights: ['VIP dawn entry to the Taj Mahal before public opening', 'Historian tour of Agra Fort Sheesh Mahal', 'Private balcony dining with uninterrupted Taj views'],
     topAttractions: [
-      { name: 'The Taj Mahal', description: 'The 17th-century white marble mausoleum built by Emperor Shah Jahan.', image: 'https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=800&q=80', tag: 'World Wonder' }
+      { name: 'The Taj Mahal', description: 'The 17th-century white Makrana marble mausoleum built by Emperor Shah Jahan on the banks of the Yamuna River.', image: 'https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=800&q=80', tag: 'World Wonder' },
+      { name: 'Agra Fort & Jahangiri Mahal', description: 'Monumental 16th-century red sandstone Mughal fortress featuring courtyards, the Diwan-i-Khas, and Sheesh Mahal.', image: 'https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=800&q=80', tag: 'Mughal Fortress' },
+      { name: 'Mehtab Bagh & Moonlit Reflections', description: 'Centuries-old Charbagh riverfront garden directly across the Yamuna offering the most serene panorama of the Taj Mahal.', image: 'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=800&q=80', tag: 'Royal Garden' },
+      { name: 'Tomb of I\'timad-ud-Daulah (Baby Taj)', description: 'Delicate marble jewel box mausoleum with the empire\'s finest Pietra Dura semi-precious stone inlays and cypress frescoes.', image: 'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=800&q=80', tag: 'Marble Landmark' },
+      { name: 'Fatehpur Sikri Imperial City & Buland Darwaza', description: 'Emperor Akbar\'s red sandstone capital city, home to the towering 54-meter Buland Darwaza and Salim Chishti tomb.', image: 'https://images.unsplash.com/photo-1596176530529-78163a4f7af2?auto=format&fit=crop&w=800&q=80', tag: 'Imperial City' }
     ],
     thingsToDo: [
-      { title: 'Mehtab Bagh Moonlight Viewing', description: 'Watch the sunset cast golden hues across the Yamuna reflection pool.', duration: '2 Hours', type: 'Scenic Vista' }
+      { title: 'Mehtab Bagh Moonlight Viewing', description: 'Watch the sunset cast golden hues across the Yamuna reflection pool.', duration: '2 Hours', type: 'Scenic Vista' },
+      { title: 'Agra Fort Imperial Historian Tour', description: 'Walk through royal chambers, mirror halls, and the private balcony where Shah Jahan spent his final years.', duration: '2.5 Hours', type: 'Heritage Walk' },
+      { title: 'Sadar Bazaar Street Food & Marble Inlay Trail', description: 'Savor authentic Agra petha sweets and observe master craftsmen practicing 400-year-old Pietra Dura inlay techniques.', duration: '2.5 Hours', type: 'Culinary & Artisan' },
+      { title: 'Sunrise Photography Charter at the Taj Mahal', description: 'Enter at dawn before crowds arrive with a certified architectural photography guide.', duration: '3 Hours', type: 'Exclusive Photography' }
     ],
     foodAndCulture: {
       overview: 'Rich Mughlai culinary recipes infused with saffron, dried fruits, and royal rosewater desserts.',

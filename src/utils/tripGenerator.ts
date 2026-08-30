@@ -129,8 +129,17 @@ export const BUDGET_TIER_CONFIG = {
     morningCostMultiplier: 0.7,
     diningCostMultiplier: 0.7,
     eveningCostMultiplier: 0.7,
-    perks: ['Certified Local Guide', 'Historic Homestays', 'Authentic Dining'],
+    perks: ['Authentic Encounters', 'Comfortable Transit', 'Local Curated Meals'],
   },
+};
+
+export const ACTIVITY_TYPE_FALLBACKS = {
+  hotel: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80',
+  dining: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1200&q=80',
+  sunset: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80',
+  starlit: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80',
+  artisan: 'https://images.unsplash.com/photo-1533900298318-6b8da08a523e?auto=format&fit=crop&w=1200&q=80',
+  heritage: 'https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=1200&q=80',
 };
 
 export function calculateTripBudget(trip: TripPlan) {
@@ -546,7 +555,7 @@ export function generateItinerary(params: TripGenerationParams): TripPlan {
         estimatedCost: baseCost,
         costDisplay: formatBilingualPrice(baseCost),
         sourceType: 'ai-curated',
-        image: heroImg,
+        image: ACTIVITY_TYPE_FALLBACKS.hotel,
         duration: '2.5 Hours',
         included: ['VIP luggage concierge', 'Herbal welcome infusions', 'Personalized suite briefing'],
         notes: `🚗 Private chauffeur transfer from airport/station to ${destTitle}.`,
@@ -610,7 +619,7 @@ export function generateItinerary(params: TripGenerationParams): TripPlan {
           estimatedCost: genericCost,
           costDisplay: formatBilingualPrice(genericCost),
           sourceType: 'ai-curated',
-          image: heroImg,
+          image: ACTIVITY_TYPE_FALLBACKS.heritage,
           duration: '2.5 Hours',
           included: ['Private local guide', 'Morning botanical tea', 'Transit in private vehicle'],
           notes: `🚗 15 mins private transfer through ${destTitle} central avenue.`,
@@ -643,7 +652,7 @@ export function generateItinerary(params: TripGenerationParams): TripPlan {
       estimatedCost: lunchCost,
       costDisplay: formatBilingualPrice(lunchCost),
       sourceType: 'ai-curated',
-      image: galleryImages[(dayIndex + 1) % galleryImages.length] || heroImg,
+      image: ACTIVITY_TYPE_FALLBACKS.dining,
       duration: '3.0 Hours',
       included: ['Private table reservation', '4-course tasting menu', 'Artisanal beverage pairing'],
       notes: '🚗 15–20 mins transfer from morning activity to culinary courtyard.',
@@ -709,7 +718,7 @@ export function generateItinerary(params: TripGenerationParams): TripPlan {
           estimatedCost: eveningCost,
           costDisplay: formatBilingualPrice(eveningCost),
           sourceType: 'ai-curated',
-          image: galleryImages[0] || heroImg,
+          image: ACTIVITY_TYPE_FALLBACKS.sunset,
           duration: '2.5 Hours',
           included: ['Private lookout access', 'Sparkling elixirs & light bites'],
           notes: '🚗 15 mins transit to panoramic sunset terrace.',
@@ -728,7 +737,7 @@ export function generateItinerary(params: TripGenerationParams): TripPlan {
         estimatedCost: eveningCost,
         costDisplay: formatBilingualPrice(eveningCost),
         sourceType: 'ai-curated',
-        image: galleryImages[dayIndex % galleryImages.length] || heroImg,
+        image: ACTIVITY_TYPE_FALLBACKS.artisan,
         duration: '2.5 Hours',
         included: ['Master artisan demonstration', 'Private shopping concierge', 'Gift packaging'],
         notes: '🚗 15 mins chauffeur drive through artisan bazaar quarter.',
@@ -754,7 +763,7 @@ export function generateItinerary(params: TripGenerationParams): TripPlan {
       estimatedCost: dinnerCost,
       costDisplay: formatBilingualPrice(dinnerCost),
       sourceType: 'ai-curated',
-      image: galleryImages[0] || heroImg,
+      image: ACTIVITY_TYPE_FALLBACKS.starlit,
       duration: '2.5 Hours',
       included: ['Private acoustic performance', 'Chef signature dessert', 'Digestifs & artisanal tea'],
       notes: '🚗 10 mins private transfer back to your suite after dinner.',
@@ -885,3 +894,70 @@ export function setActiveTripInStorage(trip: TripPlan): void {
     console.error('Failed to set active trip:', err);
   }
 }
+
+/**
+ * Asynchronously enriches all activities across all days of a TripPlan
+ * with distinct, authentic Google Places photos and prevents duplicate image assignments.
+ */
+export async function enrichTripWithPlacesPhotos(tripPlan: TripPlan): Promise<TripPlan> {
+  try {
+    const items: Array<{ id: string; title: string; location?: string; category?: string; existingImage?: string }> = [];
+
+    const planDays = tripPlan.days || [];
+    planDays.forEach((day) => {
+      day.activities.forEach((act) => {
+        items.push({
+          id: act.id,
+          title: act.title,
+          location: act.location,
+          category: act.category,
+          existingImage: act.image,
+        });
+      });
+    });
+
+    if (items.length === 0) return tripPlan;
+
+    const res = await fetch('/api/places/resolve-itinerary', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        destination: tripPlan.destinationName,
+        locationContext: tripPlan.formattedAddress || `${tripPlan.destinationName}, ${tripPlan.country}`,
+        items,
+      }),
+    });
+
+    if (!res.ok) return tripPlan;
+
+    const data = await res.json();
+    if (!data.success || !data.resolvedItems) return tripPlan;
+
+    const resolvedMap: Record<string, { image: string; cinematicImage: string; googlePlaceId?: string; isFromPlacesApi?: boolean }> = data.resolvedItems;
+
+    const updatedDays = planDays.map((day) => ({
+      ...day,
+      activities: day.activities.map((act) => {
+        const resolved = resolvedMap[act.id];
+        if (resolved && resolved.image) {
+          return {
+            ...act,
+            image: resolved.image,
+            cinematicImage: resolved.cinematicImage || resolved.image,
+            googlePlaceId: resolved.googlePlaceId,
+          };
+        }
+        return act;
+      }),
+    }));
+
+    return {
+      ...tripPlan,
+      days: updatedDays,
+    };
+  } catch (err) {
+    console.warn('Background itinerary places photo enrichment fallback:', err);
+    return tripPlan;
+  }
+}
+
