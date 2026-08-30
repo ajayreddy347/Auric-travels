@@ -77,6 +77,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
   // Resolve effective items
   const effectiveStayItem = stayItem || (bookingType === 'stay' && item ? (item as LuxuryStayItem) : null);
   const effectiveExpItem = experienceItem || (bookingType === 'experience' && item ? (item as ExperienceItem) : null);
+  const effectiveItem = effectiveStayItem || effectiveExpItem;
 
   // Form State
   const [step, setStep] = useState<'form' | 'confirmed'>('form');
