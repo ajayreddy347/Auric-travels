@@ -67,10 +67,14 @@ export function getEmailConfig(): EmailConfig {
   const secure = port === 465 || cleanVal(envMap.SMTP_SECURE || process.env.SMTP_SECURE) === 'true';
 
   if (resendApiKey) {
+    const resendFrom = cleanVal(envMap.RESEND_FROM || process.env.RESEND_FROM);
+    const validResendFrom = (resendFrom && !resendFrom.includes('gmail.com') && !resendFrom.includes('yahoo.com') && !resendFrom.includes('hotmail.com') && !resendFrom.includes('aurictravels.com'))
+      ? resendFrom
+      : 'Auric Travels <onboarding@resend.dev>';
     return {
       provider: 'resend',
       resendApiKey,
-      from: from || 'Auric Travels <onboarding@resend.dev>',
+      from: validResendFrom,
       isConfigured: true,
     };
   }
@@ -221,10 +225,10 @@ If you did not request this, you can safely ignore this email.
       const controller = new AbortController();
       const timeoutId = setTimeout(() => controller.abort(), 6000); // 6s strict timeout
 
-      // Ensure valid sender format for Resend
-      let fromAddress = config.from;
-      if (!fromAddress || fromAddress.includes('concierge@aurictravels.com')) {
-        fromAddress = 'Auric Travels <onboarding@resend.dev>';
+      // Ensure allowed testing sender for Resend
+      let fromAddress = 'Auric Travels <onboarding@resend.dev>';
+      if (config.from && !config.from.includes('gmail.com') && !config.from.includes('yahoo.com') && !config.from.includes('hotmail.com') && !config.from.includes('aurictravels.com')) {
+        fromAddress = config.from;
       }
 
       const res = await fetch('https://api.resend.com/emails', {
