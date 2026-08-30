@@ -1615,7 +1615,7 @@ app.post('/api/bookings', requireAuth, async (req: AuthenticatedRequest, res) =>
 
     const rawAmount = totalAmount ?? total_amount ?? totalCost ?? total_cost;
     const parsedAmount = Number(rawAmount);
-    const finalAmount = authoritativeTotal !== null ? authoritativeTotal : (isNaN(parsedAmount) || parsedAmount <= 0 ? 35000 : parsedAmount);
+    const finalAmount = authoritativeTotal !== null ? authoritativeTotal : (isNaN(parsedAmount) || parsedAmount <= 0 ? 1199 : parsedAmount);
 
     const effectiveCurrency = (currency && typeof currency === 'string' && currency.trim()) ? currency.trim().toUpperCase() : 'INR';
     const effectiveStatus = (bookingStatus || booking_status || status || 'confirmed').trim();

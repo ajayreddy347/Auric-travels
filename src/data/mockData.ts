@@ -24,7 +24,7 @@ export const DESTINATIONS: Destination[] = [
     reviewsCount: 460,
     bestTimeToVisit: 'October – March',
     averageTemperature: '24°C / 75°F',
-    startingPrice: '₹55,000 / $660',
+    startingPrice: '₹1,499 / $18',
     vibe: ['Royal Rajputana', 'Floating Palaces', 'Romantic Lakes', 'Mewar Heritage'],
     highlights: [
       'Private sunset solar barge cruise across Lake Pichola past Lake Palace',
@@ -85,7 +85,7 @@ export const DESTINATIONS: Destination[] = [
       ]
     },
     estimatedBudget: {
-      startingPrice: '₹55,000 / $660',
+      startingPrice: '₹1,499 / $18',
       tier: 'Luxury',
       dailyEstimate: '₹16,000 / $195 per day (couple)',
       accommodation: 'Heritage palace suite overlooking Lake Pichola',
@@ -125,7 +125,7 @@ export const DESTINATIONS: Destination[] = [
     reviewsCount: 390,
     bestTimeToVisit: 'September – March',
     averageTemperature: '27°C / 81°F',
-    startingPrice: '₹48,000 / $580',
+    startingPrice: '₹1,199 / $14',
     vibe: ['Emerald Backwaters', 'Ayurvedic Wellness', 'Spice Valleys', 'Serene Houseboats'],
     highlights: [
       'Overnight cruise aboard a private air-conditioned solar luxury Kettuvallam houseboat',
@@ -186,7 +186,7 @@ export const DESTINATIONS: Destination[] = [
       ]
     },
     estimatedBudget: {
-      startingPrice: '₹48,000 / $580',
+      startingPrice: '₹1,199 / $14',
       tier: 'Luxury',
       dailyEstimate: '₹14,500 / $175 per day (couple)',
       accommodation: 'Luxury private houseboat suite + lakeside heritage eco-resort',
@@ -226,7 +226,7 @@ export const DESTINATIONS: Destination[] = [
     reviewsCount: 320,
     bestTimeToVisit: 'May – October',
     averageTemperature: '18°C / 64°F (Summer)',
-    startingPrice: '₹62,000 / $750',
+    startingPrice: '₹1,299 / $16',
     vibe: ['High Altitude', 'Cobalt Lakes', 'Ancient Monasteries', 'Pure Adventure'],
     highlights: [
       'Crossing Khardung La — one of the highest motorable passes on Earth at 18,380 ft',
@@ -287,7 +287,7 @@ export const DESTINATIONS: Destination[] = [
       ]
     },
     estimatedBudget: {
-      startingPrice: '₹62,000 / $750',
+      startingPrice: '₹1,299 / $16',
       tier: 'Luxury',
       dailyEstimate: '₹17,500 / $210 per day (couple)',
       accommodation: 'Luxury heated glamping yurt / 5-star boutique Himalayan eco-lodge',
@@ -327,7 +327,7 @@ export const DESTINATIONS: Destination[] = [
     reviewsCount: 382,
     bestTimeToVisit: 'October – March',
     averageTemperature: '26°C / 79°F',
-    startingPrice: '₹45,000 / $540',
+    startingPrice: '₹1,099 / $13',
     vibe: ['UNESCO Heritage', 'Mystical Boulders', 'Royal History', 'Riverside Serenity'],
     highlights: [
       'Private sunset coracle boat cruise along the sacred Tungabhadra',
@@ -394,7 +394,7 @@ export const DESTINATIONS: Destination[] = [
       ]
     },
     estimatedBudget: {
-      startingPrice: '₹45,000 / $540',
+      startingPrice: '₹1,099 / $13',
       tier: 'Luxury',
       dailyEstimate: '₹14,000 / $170 per day (couple)',
       accommodation: 'Luxury heritage palace suite with pool & courtyard',
@@ -434,7 +434,7 @@ export const DESTINATIONS: Destination[] = [
     reviewsCount: 450,
     bestTimeToVisit: 'September – May',
     averageTemperature: '20°C / 68°F',
-    startingPrice: '₹38,000 / $460',
+    startingPrice: '₹899 / $11',
     vibe: ['Coffee Plantation', 'Misty Hills', 'Ayurvedic Spa', 'Gastronomy'],
     highlights: [
       'Private coffee estate tour & bean-to-cup brewing masterclass',
@@ -495,7 +495,7 @@ export const DESTINATIONS: Destination[] = [
       ]
     },
     estimatedBudget: {
-      startingPrice: '₹38,000 / $460',
+      startingPrice: '₹899 / $11',
       tier: 'Luxury',
       dailyEstimate: '₹12,000 / $145 per day (couple)',
       accommodation: 'Private coffee plantation villa with heated infinity pool',
@@ -535,7 +535,7 @@ export const DESTINATIONS: Destination[] = [
     reviewsCount: 310,
     bestTimeToVisit: 'October – June',
     averageTemperature: '25°C / 77°F',
-    startingPrice: '₹52,000 / $625',
+    startingPrice: '₹1,149 / $14',
     vibe: ['Royal Safari', 'Bengal Tigers', 'Backwater Luxury', 'Wild Wilderness'],
     highlights: [
       'Exclusive morning jeep safari tracking Bengal tigers & Indian leopards',
@@ -596,7 +596,7 @@ export const DESTINATIONS: Destination[] = [
       ]
     },
     estimatedBudget: {
-      startingPrice: '₹52,000 / $625',
+      startingPrice: '₹1,149 / $14',
       tier: 'Ultra-Luxe',
       dailyEstimate: '₹18,000 / $215 per day (couple)',
       accommodation: 'Luxury riverfront tented suite with private plunge pool',
@@ -636,7 +636,7 @@ export const DESTINATIONS: Destination[] = [
     reviewsCount: 290,
     bestTimeToVisit: 'October – April',
     averageTemperature: '28°C / 82°F',
-    startingPrice: '₹32,000 / $385',
+    startingPrice: '₹799 / $10',
     vibe: ['Barefoot Luxury', 'Arabian Sea', 'Cliffside Sunsets', 'Yoga & Wellness'],
     highlights: [
       'Five-Beach cliffside trail connecting Om, Half Moon, and Paradise Beach',
@@ -697,7 +697,7 @@ export const DESTINATIONS: Destination[] = [
       ]
     },
     estimatedBudget: {
-      startingPrice: '₹32,000 / $385',
+      startingPrice: '₹799 / $10',
       tier: 'Luxury',
       dailyEstimate: '₹10,000 / $120 per day (couple)',
       accommodation: 'Cliffside boutique eco-resort villa overlooking Om Beach',
@@ -737,7 +737,7 @@ export const DESTINATIONS: Destination[] = [
     reviewsCount: 375,
     bestTimeToVisit: 'September – March',
     averageTemperature: '24°C / 75°F',
-    startingPrice: '₹30,000 / $360',
+    startingPrice: '₹849 / $10',
     vibe: ['Royal Palaces', 'Heritage Luxury', 'Silk & Sandalwood', 'Art & Culture'],
     highlights: [
       'Private VIP evening viewing of the illuminated Mysore Palace',
@@ -798,7 +798,7 @@ export const DESTINATIONS: Destination[] = [
       ]
     },
     estimatedBudget: {
-      startingPrice: '₹30,000 / $360',
+      startingPrice: '₹849 / $10',
       tier: 'Luxury',
       dailyEstimate: '₹9,500 / $115 per day (couple)',
       accommodation: 'Heritage palace suite at Lalitha Mahal Palace Hotel',
@@ -838,7 +838,7 @@ export const DESTINATIONS: Destination[] = [
     reviewsCount: 410,
     bestTimeToVisit: 'September – March',
     averageTemperature: '23°C / 73°F',
-    startingPrice: '₹32,000 / $385',
+    startingPrice: '₹949 / $11',
     vibe: ['Garden City', 'Tudor Palace', 'Culinary Craft', 'Heritage & Innovation'],
     highlights: [
       'Private curator-guided tour of the royal Tudor-style Bangalore Palace',
@@ -911,7 +911,7 @@ export const DESTINATIONS: Destination[] = [
       ]
     },
     estimatedBudget: {
-      startingPrice: '₹32,000 / $385',
+      startingPrice: '₹949 / $11',
       tier: 'Luxury',
       dailyEstimate: '₹11,000 / $130 per day (couple)',
       accommodation: 'Luxury heritage hotel suite (e.g. The Leela Palace / Taj West End)',
@@ -951,7 +951,7 @@ export const DESTINATIONS: Destination[] = [
     reviewsCount: 320,
     bestTimeToVisit: 'September – April',
     averageTemperature: '21°C / 70°F',
-    startingPrice: '₹28,000 / $335',
+    startingPrice: '₹899 / $11',
     vibe: ['Coffee Plantation', 'Misty Highlands', 'Western Ghats', 'Colonial Serenity'],
     highlights: [
       'Private coffee harvest and cupping masterclass in a heritage 1880s estate',
@@ -1018,7 +1018,7 @@ export const DESTINATIONS: Destination[] = [
       ]
     },
     estimatedBudget: {
-      startingPrice: '₹28,000 / $335',
+      startingPrice: '₹899 / $11',
       tier: 'Luxury',
       dailyEstimate: '₹9,800 / $118 per day (couple)',
       accommodation: 'Heritage plantation bungalow suite (e.g. The Serai / Java Rain Resort)',
@@ -1058,7 +1058,7 @@ export const DESTINATIONS: Destination[] = [
     reviewsCount: 390,
     bestTimeToVisit: 'October – March',
     averageTemperature: '23°C / 73°F',
-    startingPrice: '₹42,000 / $510',
+    startingPrice: '₹999 / $12',
     vibe: ['Royal Rajputana', 'Pink Palaces', 'Imperial Forts', 'Artisanal Gems'],
     highlights: [
       'Private dawn photography access at the iconic Hawa Mahal facade',
@@ -1119,7 +1119,7 @@ export const DESTINATIONS: Destination[] = [
       ]
     },
     estimatedBudget: {
-      startingPrice: '₹42,000 / $510',
+      startingPrice: '₹999 / $12',
       tier: 'Luxury',
       dailyEstimate: '₹14,000 / $170 per day (couple)',
       accommodation: 'Heritage palace suite (e.g. Rambagh Palace / Samode Haveli)',
@@ -1159,7 +1159,7 @@ export const DESTINATIONS: Destination[] = [
     reviewsCount: 360,
     bestTimeToVisit: 'September – May',
     averageTemperature: '18°C / 64°F',
-    startingPrice: '₹34,000 / $410',
+    startingPrice: '₹899 / $11',
     vibe: ['Tea Plantations', 'Misty Valleys', 'Mountain Serenity', 'Ayurvedic Retreat'],
     highlights: [
       'Private tea harvest walk & orthodox leaf tasting with estate planters',
@@ -1220,7 +1220,7 @@ export const DESTINATIONS: Destination[] = [
       ]
     },
     estimatedBudget: {
-      startingPrice: '₹34,000 / $410',
+      startingPrice: '₹899 / $11',
       tier: 'Luxury',
       dailyEstimate: '₹11,500 / $140 per day (couple)',
       accommodation: 'Luxury tea plantation bungalow / boutique hillside resort with infinity pool',
@@ -1261,7 +1261,7 @@ export const DESTINATIONS: Destination[] = [
     reviewsCount: 342,
     bestTimeToVisit: 'May – October',
     averageTemperature: '24°C / 75°F',
-    startingPrice: '₹2,85,000 / $3,400',
+    startingPrice: '₹2,199 / $26',
     vibe: ['Coastal Luxury', 'Romance', 'Gastronomy'],
     highlights: ['Private Riva boat tour along Capri grottoes', 'Sunset aperitivo at Positano cliff bar', 'Villa Cimbrone infinity gardens in Ravello'],
     topAttractions: [
@@ -1318,7 +1318,7 @@ export const DESTINATIONS: Destination[] = [
       ]
     },
     estimatedBudget: {
-      startingPrice: '₹2,85,000 / $3,400',
+      startingPrice: '₹2,199 / $26',
       tier: 'Ultra-Luxe',
       dailyEstimate: '₹70,000 / $850 per day (couple)',
       accommodation: 'Cliffside sea-view suite in Positano with private terrace jacuzzi',
@@ -1357,7 +1357,7 @@ export const DESTINATIONS: Destination[] = [
     reviewsCount: 428,
     bestTimeToVisit: 'March – May & Oct – Nov',
     averageTemperature: '19°C / 66°F',
-    startingPrice: '₹2,45,000 / $2,950',
+    startingPrice: '₹1,899 / $23',
     vibe: ['Ancient Culture', 'Zen & Wellness', 'Culinary Arts'],
     highlights: ['Private dawn access to Fushimi Inari torii gates', 'Authentic multi-course Kaiseki in Gion', 'Bespoke meditation with Zen monks at Daitoku-ji'],
     topAttractions: [
@@ -1414,7 +1414,7 @@ export const DESTINATIONS: Destination[] = [
       ]
     },
     estimatedBudget: {
-      startingPrice: '₹2,45,000 / $2,950',
+      startingPrice: '₹1,899 / $23',
       tier: 'Luxury',
       dailyEstimate: '₹60,000 / $720 per day (couple)',
       accommodation: 'Luxury traditional Ryokan with private cypress onsen bath',
@@ -1453,7 +1453,7 @@ export const DESTINATIONS: Destination[] = [
     reviewsCount: 289,
     bestTimeToVisit: 'Dec – Apr (Snow) / Jun – Sep (Hiking)',
     averageTemperature: '16°C / 61°F (Summer)',
-    startingPrice: '₹3,40,000 / $4,100',
+    startingPrice: '₹2,399 / $29',
     vibe: ['Alpine Serenity', 'Ski & Adventure', 'Luxury Wellness'],
     highlights: ['Gornergrat scenic railway with 360° Matterhorn view', 'Helicopter glacier flight and private champagne landing', 'Heated cliffside thermal pools surrounded by snow'],
     topAttractions: [
@@ -1510,7 +1510,7 @@ export const DESTINATIONS: Destination[] = [
       ]
     },
     estimatedBudget: {
-      startingPrice: '₹3,40,000 / $4,100',
+      startingPrice: '₹2,399 / $29',
       tier: 'Ultra-Luxe',
       dailyEstimate: '₹79,000 / $950 per day (couple)',
       accommodation: 'Luxury ski-in/ski-out timber chalet with private sauna and Matterhorn balcony',
@@ -1549,7 +1549,7 @@ export const DESTINATIONS: Destination[] = [
     reviewsCount: 215,
     bestTimeToVisit: 'June – October',
     averageTemperature: '26°C / 79°F',
-    startingPrice: '₹4,30,000 / $5,200',
+    startingPrice: '₹2,499 / $30',
     vibe: ['Wild Safari', 'Raw Nature', 'Eco-Luxury'],
     highlights: ['Sunrise hot-air balloon safari over migrating herds', 'Sundowner cocktails beside private waterholes', 'Ngorongoro Crater floor game drive'],
     topAttractions: [
@@ -1606,7 +1606,7 @@ export const DESTINATIONS: Destination[] = [
       ]
     },
     estimatedBudget: {
-      startingPrice: '₹4,30,000 / $5,200',
+      startingPrice: '₹2,499 / $30',
       tier: 'Ultra-Luxe',
       dailyEstimate: '₹1,08,000 / $1,300 per day (couple)',
       accommodation: 'Luxury five-star mobile canvas camp following the migration path',
@@ -1645,7 +1645,7 @@ export const DESTINATIONS: Destination[] = [
     reviewsCount: 388,
     bestTimeToVisit: 'April – November',
     averageTemperature: '27°C / 81°F',
-    startingPrice: '₹2,60,000 / $3,100',
+    startingPrice: '₹1,999 / $24',
     vibe: ['Sun & Sea', 'Cycladic Romance', 'Wine & Dine'],
     highlights: ['Private catamaran caldera sunset cruise with barbecue', 'Volcanic vineyard tour and Assyrtiko tasting', 'Infinity cave pool overlooking the Aegean Sea'],
     topAttractions: [
@@ -1702,7 +1702,7 @@ export const DESTINATIONS: Destination[] = [
       ]
     },
     estimatedBudget: {
-      startingPrice: '₹2,60,000 / $3,100',
+      startingPrice: '₹1,999 / $24',
       tier: 'Luxury',
       dailyEstimate: '₹65,000 / $780 per day (couple)',
       accommodation: 'Cliffside caldera cave suite with heated outdoor plunge pool',
@@ -1741,7 +1741,7 @@ export const DESTINATIONS: Destination[] = [
     reviewsCount: 395,
     bestTimeToVisit: 'April – October',
     averageTemperature: '28°C / 82°F',
-    startingPrice: '₹1,95,000 / $2,350',
+    startingPrice: '₹1,599 / $19',
     vibe: ['Spiritual Sanctuary', 'Rainforest Pools', 'Holistic Wellness', 'Art & Craft'],
     highlights: ['Private purification ritual at Tirta Empul spring temple', 'Dinner inside a bamboo cocoon over Ayung River rapids', 'Sunrise trek to Mount Batur volcanic crater'],
     topAttractions: [
@@ -1798,7 +1798,7 @@ export const DESTINATIONS: Destination[] = [
       ]
     },
     estimatedBudget: {
-      startingPrice: '₹1,95,000 / $2,350',
+      startingPrice: '₹1,599 / $19',
       tier: 'Luxury',
       dailyEstimate: '₹45,000 / $540 per day (couple)',
       accommodation: 'River valley pool villa nestled in Ubud jungle canopy',
@@ -1839,7 +1839,7 @@ export const DESTINATIONS: Destination[] = [
     reviewsCount: 310,
     bestTimeToVisit: 'November – March',
     averageTemperature: '28°C / 82°F',
-    startingPrice: '₹35,000 / $420',
+    startingPrice: '₹899 / $11',
     vibe: ['Tropical Coast', 'Portuguese Heritage', 'Beach Luxury', 'Sunset Yachts'],
     highlights: ['Private sunset yacht cruise along Mandovi estuary', 'Heritage Latin Quarter walk in Fontainhas', 'Bespoke Goan-Portuguese culinary dining'],
     topAttractions: [
@@ -1857,7 +1857,7 @@ export const DESTINATIONS: Destination[] = [
       culturalTraditions: ['Traditional Fado musical soirees in heritage palacios.']
     },
     estimatedBudget: {
-      startingPrice: '₹35,000 / $420',
+      startingPrice: '₹899 / $11',
       tier: 'Luxury',
       dailyEstimate: '₹12,000 / $145 per day',
       accommodation: 'Luxury private beachfront villa or heritage Portuguese estate',
@@ -1893,7 +1893,7 @@ export const DESTINATIONS: Destination[] = [
     reviewsCount: 380,
     bestTimeToVisit: 'October – March',
     averageTemperature: '22°C / 72°F',
-    startingPrice: '₹40,000 / $480',
+    startingPrice: '₹999 / $12',
     vibe: ['Imperial History', 'Mughal Grandeur', 'Culinary Capital', 'Monumental Vistas'],
     highlights: ['Curator-led walk through Humayun’s Tomb gardens', 'VIP entry to Qutub Complex', 'Old Delhi culinary heritage trail'],
     topAttractions: [
@@ -1910,7 +1910,7 @@ export const DESTINATIONS: Destination[] = [
       culturalTraditions: ['Classical Sufi qawwali evenings at Nizamuddin Dargah.']
     },
     estimatedBudget: {
-      startingPrice: '₹40,000 / $480',
+      startingPrice: '₹999 / $12',
       tier: 'Luxury',
       dailyEstimate: '₹14,000 / $170 per day',
       accommodation: 'Historic five-star luxury hotel (e.g. The Imperial / The Leela)',
@@ -1945,7 +1945,7 @@ export const DESTINATIONS: Destination[] = [
     reviewsCount: 420,
     bestTimeToVisit: 'November – March',
     averageTemperature: '27°C / 81°F',
-    startingPrice: '₹45,000 / $540',
+    startingPrice: '₹1,199 / $14',
     vibe: ['Cosmopolitan Glamour', 'Art Deco Waterfront', 'Harbour Yachting', 'Fine Dining'],
     highlights: ['Sunset private yacht sail from Gateway of India', 'Art Deco heritage walk in Oval Maidan', 'Elephanta Island UNESCO cave exploration'],
     topAttractions: [
@@ -1962,7 +1962,7 @@ export const DESTINATIONS: Destination[] = [
       culturalTraditions: ['Kala Ghoda arts festival exhibitions and heritage gallery walks.']
     },
     estimatedBudget: {
-      startingPrice: '₹45,000 / $540',
+      startingPrice: '₹1,199 / $14',
       tier: 'Luxury',
       dailyEstimate: '₹16,000 / $190 per day',
       accommodation: 'Sea-view heritage palace suite at The Taj Mahal Palace',
@@ -1997,7 +1997,7 @@ export const DESTINATIONS: Destination[] = [
     reviewsCount: 560,
     bestTimeToVisit: 'October – March',
     averageTemperature: '24°C / 75°F',
-    startingPrice: '₹38,000 / $460',
+    startingPrice: '₹999 / $12',
     vibe: ['UNESCO Wonder', 'Imperial Romance', 'Marble Masterpieces', 'Mughal History'],
     highlights: ['VIP dawn entry to the Taj Mahal before public opening', 'Historian tour of Agra Fort Sheesh Mahal', 'Private balcony dining with uninterrupted Taj views'],
     topAttractions: [
@@ -2021,7 +2021,7 @@ export const DESTINATIONS: Destination[] = [
       culturalTraditions: ['Pietra Dura marble semi-precious stone inlay craftsmanship.']
     },
     estimatedBudget: {
-      startingPrice: '₹38,000 / $460',
+      startingPrice: '₹999 / $12',
       tier: 'Luxury',
       dailyEstimate: '₹14,000 / $170 per day',
       accommodation: 'Luxury resort with direct Taj Mahal views (e.g. Oberoi Amarvilas)',
@@ -2056,7 +2056,7 @@ export const DESTINATIONS: Destination[] = [
     reviewsCount: 295,
     bestTimeToVisit: 'September – April',
     averageTemperature: '20°C / 68°F',
-    startingPrice: '₹42,000 / $510',
+    startingPrice: '₹849 / $10',
     vibe: ['Holistic Wellness', 'Spiritual River', 'Himalayan Foothills', 'Ayurvedic Retreat'],
     highlights: ['Private sunrise yoga on Himalayan clifftop pavilions', 'White-water rafting through emerald gorges', 'Evening Ganga Aarti ceremony at Parmarth Niketan'],
     topAttractions: [
@@ -2073,7 +2073,7 @@ export const DESTINATIONS: Destination[] = [
       culturalTraditions: ['Centuries-old Vedic chanting and morning meditation rituals.']
     },
     estimatedBudget: {
-      startingPrice: '₹42,000 / $510',
+      startingPrice: '₹849 / $10',
       tier: 'Luxury',
       dailyEstimate: '₹15,000 / $180 per day',
       accommodation: 'Luxury Himalayan wellness retreat (e.g. Ananda in the Himalayas / Roseate Ganges)',
@@ -2108,7 +2108,7 @@ export const DESTINATIONS: Destination[] = [
     reviewsCount: 310,
     bestTimeToVisit: 'October – June',
     averageTemperature: '15°C / 59°F',
-    startingPrice: '₹32,000 / $385',
+    startingPrice: '₹949 / $11',
     vibe: ['Alpine Peaks', 'Snow Meadows', 'Cedar Forests', 'High Altitude'],
     highlights: ['Atal Tunnel & Sissu waterfall excursion', 'Private cedar forest trail to Jogini waterfall', 'Cozy fireside wooden chalet stay'],
     topAttractions: [
@@ -2125,7 +2125,7 @@ export const DESTINATIONS: Destination[] = [
       culturalTraditions: ['Kath-Kuni traditional wooden seismic-resistant architecture.']
     },
     estimatedBudget: {
-      startingPrice: '₹32,000 / $385',
+      startingPrice: '₹949 / $11',
       tier: 'Luxury',
       dailyEstimate: '₹11,000 / $130 per day',
       accommodation: 'Luxury pine chalet suite with valley mountain views',
@@ -2161,7 +2161,7 @@ export const DESTINATIONS: Destination[] = [
     reviewsCount: 510,
     bestTimeToVisit: 'March – May & Oct – Nov',
     averageTemperature: '18°C / 64°F',
-    startingPrice: '₹2,60,000 / $3,100',
+    startingPrice: '₹1,999 / $24',
     vibe: ['Futuristic Skyline', 'Culinary Capital', 'Michelin Omakase', 'Imperial Serenity'],
     highlights: ['VIP pre-dawn Toyosu tuna auction & private sushi counter', 'Helicopter skyline flight over Tokyo Tower', 'Private tea masterclass in Hamarikyu Gardens'],
     topAttractions: [
@@ -2178,7 +2178,7 @@ export const DESTINATIONS: Destination[] = [
       culturalTraditions: ['Kabuki theater performances and omotenashi mindful hospitality.']
     },
     estimatedBudget: {
-      startingPrice: '₹2,60,000 / $3,100',
+      startingPrice: '₹1,999 / $24',
       tier: 'Ultra-Luxe',
       dailyEstimate: '₹65,000 / $780 per day',
       accommodation: 'Skyline suite at Aman Tokyo / Mandarin Oriental',
@@ -2212,7 +2212,7 @@ export const DESTINATIONS: Destination[] = [
     reviewsCount: 460,
     bestTimeToVisit: 'Year-Round',
     averageTemperature: '29°C / 84°F',
-    startingPrice: '₹2,20,000 / $2,650',
+    startingPrice: '₹1,999 / $24',
     vibe: ['Garden City', 'Marina Skyline', 'Gourmet Melting Pot', 'Futuristic Eco'],
     highlights: ['After-hours private tour of Cloud Forest & Flower Dome', 'Private rooftop dining over Marina Bay', 'Heritage Peranakan cooking masterclass in Katong'],
     topAttractions: [
@@ -2229,7 +2229,7 @@ export const DESTINATIONS: Destination[] = [
       culturalTraditions: ['Peranakan beadwork and Singapore Heritage Orchid conservation.']
     },
     estimatedBudget: {
-      startingPrice: '₹2,20,000 / $2,650',
+      startingPrice: '₹1,999 / $24',
       tier: 'Luxury',
       dailyEstimate: '₹55,000 / $660 per day',
       accommodation: 'Luxury suite at Raffles Singapore / Marina Bay Sands',
@@ -2261,7 +2261,7 @@ export const DESTINATIONS: Destination[] = [
     reviewsCount: 390,
     bestTimeToVisit: 'November – February',
     averageTemperature: '28°C / 82°F',
-    startingPrice: '₹1,60,000 / $1,920',
+    startingPrice: '₹1,299 / $16',
     vibe: ['Golden Temples', 'River Life', 'Royal Gastronomy', 'Holistic Spas'],
     highlights: ['Private longtail boat canal cruise to Wat Arun', 'After-hours Grand Palace curator visit', 'Michelin Thai tasting menu overlooking the river'],
     topAttractions: [
@@ -2278,7 +2278,7 @@ export const DESTINATIONS: Destination[] = [
       culturalTraditions: ['Traditional Thai Nuad Boran healing massage and water blessings.']
     },
     estimatedBudget: {
-      startingPrice: '₹1,60,000 / $1,920',
+      startingPrice: '₹1,299 / $16',
       tier: 'Luxury',
       dailyEstimate: '₹38,000 / $460 per day',
       accommodation: 'Riverside suite at The Siam / Mandarin Oriental Bangkok',
@@ -2310,7 +2310,7 @@ export const DESTINATIONS: Destination[] = [
     reviewsCount: 370,
     bestTimeToVisit: 'November – April',
     averageTemperature: '29°C / 84°F',
-    startingPrice: '₹1,85,000 / $2,200',
+    startingPrice: '₹1,399 / $17',
     vibe: ['Turquoise Waters', 'Karst Islands', 'Private Pool Villas', 'Beach Luxury'],
     highlights: ['Private yacht charter through Phang Nga Bay limestone caves', 'Clifftop infinity pool villa overlooking Andaman sunsets', 'Holistic Ayurvedic & Thai wellness therapies'],
     topAttractions: [
@@ -2327,7 +2327,7 @@ export const DESTINATIONS: Destination[] = [
       culturalTraditions: ['Old Phuket Town Sino-Portuguese architecture and Baba-Nyonya heritage.']
     },
     estimatedBudget: {
-      startingPrice: '₹1,85,000 / $2,200',
+      startingPrice: '₹1,399 / $17',
       tier: 'Luxury',
       dailyEstimate: '₹48,000 / $580 per day',
       accommodation: 'Clifftop private pool villa (e.g. Amanpuri / Trisara)',
@@ -2359,7 +2359,7 @@ export const DESTINATIONS: Destination[] = [
     reviewsCount: 340,
     bestTimeToVisit: 'April – June & Sep – Nov',
     averageTemperature: '17°C / 63°F',
-    startingPrice: '₹2,30,000 / $2,750',
+    startingPrice: '₹1,899 / $23',
     vibe: ['Royal Dynasties', 'Hanok Heritage', 'K-Gastronomy', 'Modern Design'],
     highlights: ['Private dawn tour of Changdeokgung Secret Garden', 'Royal Hanbok styling and photo session in Bukchon', 'Ten-course Korean Royal Court Hanjeongsik feast'],
     topAttractions: [
@@ -2376,7 +2376,7 @@ export const DESTINATIONS: Destination[] = [
       culturalTraditions: ['Traditional Hanbok textile craftsmanship and Celadon ceramic arts.']
     },
     estimatedBudget: {
-      startingPrice: '₹2,30,000 / $2,750',
+      startingPrice: '₹1,899 / $23',
       tier: 'Luxury',
       dailyEstimate: '₹56,000 / $670 per day',
       accommodation: 'Luxury suite at Four Seasons Seoul / Signiel Seoul',
@@ -2408,7 +2408,7 @@ export const DESTINATIONS: Destination[] = [
     reviewsCount: 480,
     bestTimeToVisit: 'November – March',
     averageTemperature: '25°C / 77°F',
-    startingPrice: '₹2,70,000 / $3,250',
+    startingPrice: '₹2,199 / $26',
     vibe: ['Ultra-Luxury', 'Desert Dunes', 'Iconic Architecture', 'Arabian Glamour'],
     highlights: ['Private vintage Land Rover wildlife safari in Dubai Desert Conservation Reserve', 'Sunset helicopter flight over Palm Jumeirah & Burj Al Arab', 'Dine underwater at Michelin-starred Ossiano'],
     topAttractions: [
@@ -2425,7 +2425,7 @@ export const DESTINATIONS: Destination[] = [
       culturalTraditions: ['Bedouin falconry arts, pearl diving heritage, and Arabian horse breeding.']
     },
     estimatedBudget: {
-      startingPrice: '₹2,70,000 / $3,250',
+      startingPrice: '₹2,199 / $26',
       tier: 'Ultra-Luxe',
       dailyEstimate: '₹70,000 / $840 per day',
       accommodation: 'Luxury desert pool villa at Al Maha Resort / Burj Al Arab suite',
@@ -2457,7 +2457,7 @@ export const DESTINATIONS: Destination[] = [
     reviewsCount: 430,
     bestTimeToVisit: 'April – June & Sep – Nov',
     averageTemperature: '20°C / 68°F',
-    startingPrice: '₹2,10,000 / $2,500',
+    startingPrice: '₹1,699 / $20',
     vibe: ['Two Continents', 'Byzantine Splendor', 'Ottoman Palaces', 'Bosphorus Twilight'],
     highlights: ['Private sunset yacht cruise along the Bosphorus Strait', 'After-hours historian tour of Hagia Sophia & Topkapi Palace', 'Traditional luxury Turkish Hammam bath therapy'],
     topAttractions: [
@@ -2474,7 +2474,7 @@ export const DESTINATIONS: Destination[] = [
       culturalTraditions: ['Whirling Dervish Sufi ceremonies and centuries-old Hammam rituals.']
     },
     estimatedBudget: {
-      startingPrice: '₹2,10,000 / $2,500',
+      startingPrice: '₹1,699 / $20',
       tier: 'Luxury',
       dailyEstimate: '₹50,000 / $600 per day',
       accommodation: 'Bosphorus palace suite at Çırağan Palace Kempinski / Four Seasons Bosphorus',
@@ -2508,7 +2508,7 @@ export const DESTINATIONS: Destination[] = [
     reviewsCount: 580,
     bestTimeToVisit: 'April – October',
     averageTemperature: '19°C / 66°F',
-    startingPrice: '₹3,10,000 / $3,700',
+    startingPrice: '₹2,299 / $28',
     vibe: ['Haute Couture', 'Romantic Grandeur', 'Louvre Treasures', 'Michelin Gastronomy'],
     highlights: ['Private after-hours curator tour of the Musée du Louvre', 'Sunset champagne cruise on the Seine', 'Bespoke Haute Joaillerie atelier visit on Place Vendôme'],
     topAttractions: [
@@ -2525,7 +2525,7 @@ export const DESTINATIONS: Destination[] = [
       culturalTraditions: ['Opéra Garnier ballet performances and Saint-Germain literary salons.']
     },
     estimatedBudget: {
-      startingPrice: '₹3,10,000 / $3,700',
+      startingPrice: '₹2,299 / $28',
       tier: 'Ultra-Luxe',
       dailyEstimate: '₹75,000 / $900 per day',
       accommodation: 'Historic palace hotel suite (e.g. The Ritz Paris / Le Meurice)',
@@ -2557,7 +2557,7 @@ export const DESTINATIONS: Destination[] = [
     reviewsCount: 520,
     bestTimeToVisit: 'March – June & Sep – Nov',
     averageTemperature: '22°C / 72°F',
-    startingPrice: '₹2,80,000 / $3,350',
+    startingPrice: '₹2,099 / $25',
     vibe: ['Ancient Imperial', 'Renaissance Art', 'Vatican Splendor', 'Piazza Dining'],
     highlights: ['Private VIP underground tour of the Colosseum and arena floor', 'After-hours access to the Vatican Museums & Sistine Chapel', 'Sunset vintage Vespa tour through Trastevere piazzas'],
     topAttractions: [
@@ -2574,7 +2574,7 @@ export const DESTINATIONS: Destination[] = [
       culturalTraditions: ['Evening passeggiata strolls around illuminated Piazza Navona fountains.']
     },
     estimatedBudget: {
-      startingPrice: '₹2,80,000 / $3,350',
+      startingPrice: '₹2,099 / $25',
       tier: 'Luxury',
       dailyEstimate: '₹68,000 / $820 per day',
       accommodation: 'Luxury heritage hotel suite (e.g. Hotel de Russie / Hassler Roma)',
@@ -2606,7 +2606,7 @@ export const DESTINATIONS: Destination[] = [
     reviewsCount: 410,
     bestTimeToVisit: 'April – June & Sep – Oct',
     averageTemperature: '21°C / 70°F',
-    startingPrice: '₹2,90,000 / $3,500',
+    startingPrice: '₹2,199 / $26',
     vibe: ['Floating City', 'Grand Canal Palaces', 'Gondola Romance', 'Murano Glass'],
     highlights: ['Private handcrafted wooden water taxi arrival at palace jetty', 'Exclusive after-hours visit to St. Mark’s Basilica mosaics', 'Private Murano master glassblower studio session'],
     topAttractions: [
@@ -2623,7 +2623,7 @@ export const DESTINATIONS: Destination[] = [
       culturalTraditions: ['Venice Biennale contemporary art and historical Carnevale masquerades.']
     },
     estimatedBudget: {
-      startingPrice: '₹2,90,000 / $3,500',
+      startingPrice: '₹2,199 / $26',
       tier: 'Ultra-Luxe',
       dailyEstimate: '₹72,000 / $860 per day',
       accommodation: 'Grand Canal palazzo suite (e.g. The Gritti Palace / Aman Venice)',
@@ -2655,7 +2655,7 @@ export const DESTINATIONS: Destination[] = [
     reviewsCount: 540,
     bestTimeToVisit: 'May – September',
     averageTemperature: '20°C / 68°F',
-    startingPrice: '₹3,20,000 / $3,850',
+    startingPrice: '₹2,399 / $29',
     vibe: ['Royal Majesty', 'West End Theater', 'Mayfair Luxury', 'Thames Panoramas'],
     highlights: ['Private Tower of London Crown Jewels viewing before opening', 'VIP Royal Box seating at West End theater productions', 'Exclusive afternoon tea at The Ritz London Palm Court'],
     topAttractions: [
@@ -2672,7 +2672,7 @@ export const DESTINATIONS: Destination[] = [
       culturalTraditions: ['British royal ceremonial changing of the guard and West End opening nights.']
     },
     estimatedBudget: {
-      startingPrice: '₹3,20,000 / $3,850',
+      startingPrice: '₹2,399 / $29',
       tier: 'Ultra-Luxe',
       dailyEstimate: '₹76,000 / $910 per day',
       accommodation: 'Luxury suite in Mayfair / Knightsbridge (e.g. The Connaught / Claridge’s)',
@@ -2704,7 +2704,7 @@ export const DESTINATIONS: Destination[] = [
     reviewsCount: 460,
     bestTimeToVisit: 'April – October',
     averageTemperature: '24°C / 75°F',
-    startingPrice: '₹2,50,000 / $3,000',
+    startingPrice: '₹1,899 / $23',
     vibe: ['Gaudí Modernisme', 'Mediterranean Sun', 'Gothic Quarter', 'Avant-Garde Tapas'],
     highlights: ['Private architect-led visit to Sagrada Família & Park Güell', 'Sunset catamaran cruise along the Barceloneta coastline', 'Curated tapas & Priorat wine tasting in El Born'],
     topAttractions: [
@@ -2721,7 +2721,7 @@ export const DESTINATIONS: Destination[] = [
       culturalTraditions: ['Castellers human tower building and Catalan Flamenco performances.']
     },
     estimatedBudget: {
-      startingPrice: '₹2,50,000 / $3,000',
+      startingPrice: '₹1,899 / $23',
       tier: 'Luxury',
       dailyEstimate: '₹60,000 / $720 per day',
       accommodation: 'Sea-view suite at Hotel Arts / Mandarin Oriental Barcelona',
@@ -2753,7 +2753,7 @@ export const DESTINATIONS: Destination[] = [
     reviewsCount: 390,
     bestTimeToVisit: 'April – October',
     averageTemperature: '19°C / 66°F',
-    startingPrice: '₹2,40,000 / $2,880',
+    startingPrice: '₹1,999 / $24',
     vibe: ['Canal Elegance', 'Dutch Masters', 'Historic Mansions', 'Boutique Culture'],
     highlights: ['Private historic wooden salon boat canal cruise with champagne', 'Curator-guided walkthrough of the Van Gogh Museum & Rijksmuseum', 'Spring private tulip estate excursion in Keukenhof'],
     topAttractions: [
@@ -2770,7 +2770,7 @@ export const DESTINATIONS: Destination[] = [
       culturalTraditions: ['Dutch Golden Age painting preservation and Keukenhof tulip heritage.']
     },
     estimatedBudget: {
-      startingPrice: '₹2,40,000 / $2,880',
+      startingPrice: '₹1,999 / $24',
       tier: 'Luxury',
       dailyEstimate: '₹58,000 / $700 per day',
       accommodation: 'Canal-side luxury suite (e.g. Waldorf Astoria Amsterdam / Conservatorium)',
@@ -2802,7 +2802,7 @@ export const DESTINATIONS: Destination[] = [
     reviewsCount: 370,
     bestTimeToVisit: 'May – September',
     averageTemperature: '20°C / 68°F',
-    startingPrice: '₹2,20,000 / $2,650',
+    startingPrice: '₹1,699 / $20',
     vibe: ['Fairytale Gothic', 'Bohemian Castle', 'Baroque Libraries', 'Classical Symphony'],
     highlights: ['Dawn private walk across Charles Bridge without crowds', 'Exclusive access to Strahov Monastery Baroque Library halls', 'Private classical concert in a historic palace salon'],
     topAttractions: [
@@ -2819,7 +2819,7 @@ export const DESTINATIONS: Destination[] = [
       culturalTraditions: ['Bohemian crystal glassblowing and classical Mozart opera traditions.']
     },
     estimatedBudget: {
-      startingPrice: '₹2,20,000 / $2,650',
+      startingPrice: '₹1,699 / $20',
       tier: 'Luxury',
       dailyEstimate: '₹52,000 / $620 per day',
       accommodation: 'Luxury suite at Four Seasons Hotel Prague / Augustine',
@@ -2851,7 +2851,7 @@ export const DESTINATIONS: Destination[] = [
     reviewsCount: 410,
     bestTimeToVisit: 'April – October',
     averageTemperature: '21°C / 70°F',
-    startingPrice: '₹2,65,000 / $3,180',
+    startingPrice: '₹1,999 / $24',
     vibe: ['Imperial Habsburg', 'Classical Symphony', 'Palace Grandeur', 'Coffeehouse Culture'],
     highlights: ['After-hours private tour of Schönbrunn Palace State Rooms', 'VIP box tickets at the Vienna State Opera', 'Exclusive Sachertorte and coffee tasting in historic salons'],
     topAttractions: [
@@ -2868,7 +2868,7 @@ export const DESTINATIONS: Destination[] = [
       culturalTraditions: ['Vienna Philharmonic New Year tradition and grand winter ball season.']
     },
     estimatedBudget: {
-      startingPrice: '₹2,65,000 / $3,180',
+      startingPrice: '₹1,999 / $24',
       tier: 'Luxury',
       dailyEstimate: '₹64,000 / $770 per day',
       accommodation: 'Luxury palace suite at Hotel Imperial / Palais Coburg',
@@ -2900,7 +2900,7 @@ export const DESTINATIONS: Destination[] = [
     reviewsCount: 380,
     bestTimeToVisit: 'March – November',
     averageTemperature: '23°C / 73°F',
-    startingPrice: '₹2,35,000 / $2,800',
+    startingPrice: '₹1,799 / $22',
     vibe: ['Atlantic Sun', 'Azulejo Tiles', 'Fairytale Sintra', 'Seafood Gastronomy'],
     highlights: ['Private helicopter flight to Sintra’s colorful Pena Palace', 'Sunset sailing on the Tagus River aboard a luxury yacht', 'Soulful Fado dinner in an intimate Alfama cellar'],
     topAttractions: [
@@ -2917,7 +2917,7 @@ export const DESTINATIONS: Destination[] = [
       culturalTraditions: ['Intangible UNESCO heritage Fado acoustic guitar singing.']
     },
     estimatedBudget: {
-      startingPrice: '₹2,35,000 / $2,800',
+      startingPrice: '₹1,799 / $22',
       tier: 'Luxury',
       dailyEstimate: '₹56,000 / $670 per day',
       accommodation: 'Luxury suite at Four Seasons Hotel Ritz Lisbon / Olissippo Lapa Palace',
@@ -2951,7 +2951,7 @@ export const DESTINATIONS: Destination[] = [
     reviewsCount: 620,
     bestTimeToVisit: 'April – June & Sep – Dec',
     averageTemperature: '20°C / 68°F',
-    startingPrice: '₹3,40,000 / $4,100',
+    startingPrice: '₹2,399 / $29',
     vibe: ['Manhattan Skyline', 'Broadway VIP', 'Art & Museums', 'World Dining'],
     highlights: ['Private doors-off sunset helicopter flight over the Statue of Liberty', 'VIP after-hours access to The Metropolitan Museum of Art', 'Prime orchestra seating for premier Broadway shows'],
     topAttractions: [
@@ -2968,7 +2968,7 @@ export const DESTINATIONS: Destination[] = [
       culturalTraditions: ['Broadway theatrical opening galas and Lincoln Center symphony recitals.']
     },
     estimatedBudget: {
-      startingPrice: '₹3,40,000 / $4,100',
+      startingPrice: '₹2,399 / $29',
       tier: 'Ultra-Luxe',
       dailyEstimate: '₹82,000 / $980 per day',
       accommodation: 'Central Park-view suite at The Mark / The Carlyle / Aman New York',
@@ -3000,7 +3000,7 @@ export const DESTINATIONS: Destination[] = [
     reviewsCount: 440,
     bestTimeToVisit: 'Year-Round',
     averageTemperature: '24°C / 75°F',
-    startingPrice: '₹3,20,000 / $3,850',
+    startingPrice: '₹2,299 / $28',
     vibe: ['Pacific Coast', 'Hollywood Glamour', 'Beverly Hills Luxury', 'Malibu Sunsets'],
     highlights: ['Private vintage convertible drive along Malibu Pacific Coast Highway', 'VIP after-hours tour of The Getty Center & Villa', 'Private beach cabana day at Santa Monica & Malibu'],
     topAttractions: [
@@ -3017,7 +3017,7 @@ export const DESTINATIONS: Destination[] = [
       culturalTraditions: ['Academy Awards red carpet heritage and contemporary art exhibitions.']
     },
     estimatedBudget: {
-      startingPrice: '₹3,20,000 / $3,850',
+      startingPrice: '₹2,299 / $28',
       tier: 'Ultra-Luxe',
       dailyEstimate: '₹75,000 / $900 per day',
       accommodation: 'Luxury private bungalow at The Beverly Hills Hotel / Nobu Ryokan Malibu',
@@ -3049,7 +3049,7 @@ export const DESTINATIONS: Destination[] = [
     reviewsCount: 410,
     bestTimeToVisit: 'September – November',
     averageTemperature: '18°C / 64°F',
-    startingPrice: '₹3,00,000 / $3,600',
+    startingPrice: '₹2,299 / $28',
     vibe: ['Golden Gate', 'Napa Vineyards', 'Redwood Canopies', 'Bay Sailing'],
     highlights: ['Private yacht charter beneath the Golden Gate Bridge at sunset', 'Helicopter flight to private Napa Valley vineyard tasting', 'Morning naturalist walk among ancient giant Muir Woods redwoods'],
     topAttractions: [
@@ -3066,7 +3066,7 @@ export const DESTINATIONS: Destination[] = [
       culturalTraditions: ['Historic cable car operation and Victorian architecture preservation.']
     },
     estimatedBudget: {
-      startingPrice: '₹3,00,000 / $3,600',
+      startingPrice: '₹2,299 / $28',
       tier: 'Luxury',
       dailyEstimate: '₹72,000 / $860 per day',
       accommodation: 'Luxury bay-view suite at The St. Regis / Four Seasons San Francisco',
@@ -3098,7 +3098,7 @@ export const DESTINATIONS: Destination[] = [
     reviewsCount: 480,
     bestTimeToVisit: 'October – April',
     averageTemperature: '22°C / 72°F',
-    startingPrice: '₹2,60,000 / $3,100',
+    startingPrice: '₹1,899 / $23',
     vibe: ['Desert Glamour', 'World Entertainment', 'Grand Canyon Flights', 'Master Chefs'],
     highlights: ['Helicopter flight with champagne landing on the Grand Canyon floor', 'VIP table service at world-renowned theater and culinary lounges', 'Private cabana day at Bellagio & Wynn pool gardens'],
     topAttractions: [
@@ -3115,7 +3115,7 @@ export const DESTINATIONS: Destination[] = [
       culturalTraditions: ['World-class illusionist arts and monumental stage production craftsmanship.']
     },
     estimatedBudget: {
-      startingPrice: '₹2,60,000 / $3,100',
+      startingPrice: '₹1,899 / $23',
       tier: 'Ultra-Luxe',
       dailyEstimate: '₹68,000 / $820 per day',
       accommodation: 'Luxury penthouse villa at Wynn Tower Suites / Bellagio Sky Villa',
@@ -3147,7 +3147,7 @@ export const DESTINATIONS: Destination[] = [
     reviewsCount: 390,
     bestTimeToVisit: 'November – April',
     averageTemperature: '26°C / 79°F',
-    startingPrice: '₹2,80,000 / $3,350',
+    startingPrice: '₹1,999 / $24',
     vibe: ['Art Deco Beach', 'Yacht Lifestyle', 'Biscayne Bay', 'Tropical Chic'],
     highlights: ['Private yacht charter around Biscayne Bay and Key Biscayne', 'Curator walk through Wynwood Walls & Design District galleries', 'Oceanfront cabana relaxation with Latin-infused gastronomy'],
     topAttractions: [
@@ -3164,7 +3164,7 @@ export const DESTINATIONS: Destination[] = [
       culturalTraditions: ['Art Basel Miami Beach international contemporary art fairs.']
     },
     estimatedBudget: {
-      startingPrice: '₹2,80,000 / $3,350',
+      startingPrice: '₹1,999 / $24',
       tier: 'Luxury',
       dailyEstimate: '₹66,000 / $790 per day',
       accommodation: 'Oceanfront suite at The Setai / Faena Hotel Miami Beach',
@@ -3196,7 +3196,7 @@ export const DESTINATIONS: Destination[] = [
     reviewsCount: 360,
     bestTimeToVisit: 'May – October',
     averageTemperature: '21°C / 70°F',
-    startingPrice: '₹2,65,000 / $3,180',
+    startingPrice: '₹1,999 / $24',
     vibe: ['Coastal Rainforest', 'Pacific Harbour', 'Mountain Vistas', 'Eco-Luxury'],
     highlights: ['Private seaplane flight over glacial fjords to Victoria', 'Naturalist walk through ancient Stanley Park cedar groves', 'Farm-to-table Pacific seafood dining on Granville Island'],
     topAttractions: [
@@ -3213,7 +3213,7 @@ export const DESTINATIONS: Destination[] = [
       culturalTraditions: ['First Nations totem pole carving and cultural storytelling.']
     },
     estimatedBudget: {
-      startingPrice: '₹2,65,000 / $3,180',
+      startingPrice: '₹1,999 / $24',
       tier: 'Luxury',
       dailyEstimate: '₹62,000 / $740 per day',
       accommodation: 'Harbour-view suite at Fairmont Pacific Rim / Rosewood Hotel Georgia',
@@ -3245,7 +3245,7 @@ export const DESTINATIONS: Destination[] = [
     reviewsCount: 380,
     bestTimeToVisit: 'May – October',
     averageTemperature: '22°C / 72°F',
-    startingPrice: '₹2,50,000 / $3,000',
+    startingPrice: '₹1,899 / $23',
     vibe: ['Lakefront Skyline', 'Niagara Excursions', 'Distillery Arts', 'Cosmopolitan Hub'],
     highlights: ['Helicopter flight to Niagara Falls and private winery lunch', 'Private after-hours tour of the Art Gallery of Ontario', 'Waterfront sailing across Lake Ontario islands'],
     topAttractions: [
@@ -3262,7 +3262,7 @@ export const DESTINATIONS: Destination[] = [
       culturalTraditions: ['Toronto International Film Festival galas and historic theater productions.']
     },
     estimatedBudget: {
-      startingPrice: '₹2,50,000 / $3,000',
+      startingPrice: '₹1,899 / $23',
       tier: 'Luxury',
       dailyEstimate: '₹58,000 / $700 per day',
       accommodation: 'Luxury suite at Four Seasons Hotel Toronto / The Ritz-Carlton',
@@ -3294,7 +3294,7 @@ export const DESTINATIONS: Destination[] = [
     reviewsCount: 490,
     bestTimeToVisit: 'June – Sep (Hiking) / Dec – Apr (Skiing)',
     averageTemperature: '19°C / 66°F (Summer)',
-    startingPrice: '₹3,30,000 / $3,950',
+    startingPrice: '₹2,199 / $26',
     vibe: ['Glacial Lakes', 'Rocky Mountains', 'Castle Lodges', 'Wild Nature'],
     highlights: ['Private sunrise canoeing on Lake Louise & Moraine Lake', 'Helicopter flight over glaciers and private mountain landing', 'Thermal mineral hot spring soak surrounded by snow-capped peaks'],
     topAttractions: [
@@ -3311,7 +3311,7 @@ export const DESTINATIONS: Destination[] = [
       culturalTraditions: ['Heritage Canadian Pacific railway chateau history and mountain mountaineering lore.']
     },
     estimatedBudget: {
-      startingPrice: '₹3,30,000 / $3,950',
+      startingPrice: '₹2,199 / $26',
       tier: 'Ultra-Luxe',
       dailyEstimate: '₹78,000 / $940 per day',
       accommodation: 'Luxury mountain castle suite at Fairmont Banff Springs / Chateau Lake Louise',
@@ -3345,7 +3345,7 @@ export const DESTINATIONS: Destination[] = [
     reviewsCount: 420,
     bestTimeToVisit: 'December – March',
     averageTemperature: '28°C / 82°F',
-    startingPrice: '₹2,70,000 / $3,250',
+    startingPrice: '₹1,799 / $22',
     vibe: ['Marvelous City', 'Golden Beaches', 'Granite Peaks', 'Bossa Nova Rhythms'],
     highlights: ['Private dawn access to Christ the Redeemer at Corcovado', 'Sunset helicopter flight over Sugarloaf and Copacabana', 'Private schooner yacht sail in Guanabara Bay'],
     topAttractions: [
@@ -3362,7 +3362,7 @@ export const DESTINATIONS: Destination[] = [
       culturalTraditions: ['Carnaval samba schools and Bossa Nova jazz heritage.']
     },
     estimatedBudget: {
-      startingPrice: '₹2,70,000 / $3,250',
+      startingPrice: '₹1,799 / $22',
       tier: 'Luxury',
       dailyEstimate: '₹65,000 / $780 per day',
       accommodation: 'Oceanfront suite at Copacabana Palace, A Belmond Hotel',
@@ -3394,7 +3394,7 @@ export const DESTINATIONS: Destination[] = [
     reviewsCount: 380,
     bestTimeToVisit: 'March – May & Oct – Nov',
     averageTemperature: '22°C / 72°F',
-    startingPrice: '₹2,40,000 / $2,880',
+    startingPrice: '₹1,699 / $20',
     vibe: ['Paris of South America', 'Tango Passion', 'Belle Époque', 'Malbec & Steaks'],
     highlights: ['Private VIP Tango masterclass and historic theater performance', 'Curator walk through Recoleta and Teatro Colón opera house', 'Mendoza Malbec wine cellar pairing in a private cellar'],
     topAttractions: [
@@ -3411,7 +3411,7 @@ export const DESTINATIONS: Destination[] = [
       culturalTraditions: ['Milonga social tango dance halls and gaucho equestrian culture.']
     },
     estimatedBudget: {
-      startingPrice: '₹2,40,000 / $2,880',
+      startingPrice: '₹1,699 / $20',
       tier: 'Luxury',
       dailyEstimate: '₹55,000 / $660 per day',
       accommodation: 'Luxury palace suite at Alvear Palace Hotel / Four Seasons Buenos Aires',
@@ -3443,7 +3443,7 @@ export const DESTINATIONS: Destination[] = [
     reviewsCount: 310,
     bestTimeToVisit: 'November – March',
     averageTemperature: '14°C / 57°F',
-    startingPrice: '₹3,80,000 / $4,550',
+    startingPrice: '₹2,399 / $29',
     vibe: ['Untamed Frontier', 'Granite Horns', 'Glacial Icefields', 'Eco-Luxury Lodges'],
     highlights: ['Private naturalist trek to the base of Torres del Paine granite towers', 'Boat navigation past calving icebergs of Grey Glacier', 'Gaucho horseback ride across Patagonian pampas'],
     topAttractions: [
@@ -3460,7 +3460,7 @@ export const DESTINATIONS: Destination[] = [
       culturalTraditions: ['Gaucho cowboy horsemanship and mate tea rituals.']
     },
     estimatedBudget: {
-      startingPrice: '₹3,80,000 / $4,550',
+      startingPrice: '₹2,399 / $29',
       tier: 'Ultra-Luxe',
       dailyEstimate: '₹95,000 / $1,140 per day',
       accommodation: 'Luxury all-inclusive design lodge (e.g. Explora Patagonia / Tierra Patagonia)',
@@ -3494,7 +3494,7 @@ export const DESTINATIONS: Destination[] = [
     reviewsCount: 470,
     bestTimeToVisit: 'November – April',
     averageTemperature: '25°C / 77°F',
-    startingPrice: '₹2,60,000 / $3,100',
+    startingPrice: '₹1,899 / $23',
     vibe: ['Table Mountain', 'Cape Winelands', 'Atlantic Cliffs', 'Coastal Safari'],
     highlights: ['Private helicopter flight over the Cape Peninsula and Two Oceans', 'Exclusive vineyard tour and tasting in Stellenbosch & Franschhoek', 'Private access to Boulders Beach African penguin colony'],
     topAttractions: [
@@ -3511,7 +3511,7 @@ export const DESTINATIONS: Destination[] = [
       culturalTraditions: ['Bo-Kaap colorful architectural preservation and Cape floral kingdom fynbos heritage.']
     },
     estimatedBudget: {
-      startingPrice: '₹2,60,000 / $3,100',
+      startingPrice: '₹1,899 / $23',
       tier: 'Luxury',
       dailyEstimate: '₹62,000 / $740 per day',
       accommodation: 'Waterfront suite at The Silo Hotel / Ellerman House',
@@ -3543,7 +3543,7 @@ export const DESTINATIONS: Destination[] = [
     reviewsCount: 420,
     bestTimeToVisit: 'October – May',
     averageTemperature: '23°C / 73°F',
-    startingPrice: '₹2,40,000 / $2,880',
+    startingPrice: '₹1,599 / $19',
     vibe: ['Ochre Medina', 'Exotic Riads', 'Spiced Souks', 'Atlas Backdrop'],
     highlights: ['Private after-hours tour of Yves Saint Laurent’s Jardin Majorelle', 'Exclusive Berber mountain excursion into the High Atlas valleys', 'Traditional Hammam scrub with black soap and pure argan oil'],
     topAttractions: [
@@ -3560,7 +3560,7 @@ export const DESTINATIONS: Destination[] = [
       culturalTraditions: ['Traditional Moroccan tea pouring hospitality and Zellige tile craftsmanship.']
     },
     estimatedBudget: {
-      startingPrice: '₹2,40,000 / $2,880',
+      startingPrice: '₹1,599 / $19',
       tier: 'Luxury',
       dailyEstimate: '₹58,000 / $700 per day',
       accommodation: 'Luxury private riad suite at Royal Mansour / La Mamounia',
@@ -3592,7 +3592,7 @@ export const DESTINATIONS: Destination[] = [
     reviewsCount: 310,
     bestTimeToVisit: 'February – August',
     averageTemperature: '26°C / 79°F',
-    startingPrice: '₹3,50,000 / $4,200',
+    startingPrice: '₹2,199 / $26',
     vibe: ['Natural Wonder', 'Thunderous Falls', 'Zambezi River', 'Big Five Safari'],
     highlights: ['"Flight of Angels" helicopter tour over the entire waterfall curtain', 'Luxury sunset cruise on the upper Zambezi River with hippos', 'Exclusive guided rainforest gorge walk along spray trails'],
     topAttractions: [
@@ -3609,7 +3609,7 @@ export const DESTINATIONS: Destination[] = [
       culturalTraditions: ['Tonga and Shona tribal music and stone sculpture heritage.']
     },
     estimatedBudget: {
-      startingPrice: '₹3,50,000 / $4,200',
+      startingPrice: '₹2,199 / $26',
       tier: 'Ultra-Luxe',
       dailyEstimate: '₹85,000 / $1,020 per day',
       accommodation: 'Luxury river lodge suite at The Victoria Falls Hotel / Royal Chundu',
@@ -3643,7 +3643,7 @@ export const DESTINATIONS: Destination[] = [
     reviewsCount: 520,
     bestTimeToVisit: 'September – April',
     averageTemperature: '24°C / 75°F',
-    startingPrice: '₹2,90,000 / $3,500',
+    startingPrice: '₹2,199 / $26',
     vibe: ['Harbour Sails', 'Bondi Coast', 'Opera House', 'Modern Australian'],
     highlights: ['Private yacht charter around Sydney Harbour with chef catering', 'VIP behind-the-scenes tour of the Sydney Opera House', 'Climb the Sydney Harbour Bridge at twilight'],
     topAttractions: [
@@ -3660,7 +3660,7 @@ export const DESTINATIONS: Destination[] = [
       culturalTraditions: ['Indigenous Aboriginal heritage tours and contemporary harbour arts festivals.']
     },
     estimatedBudget: {
-      startingPrice: '₹2,90,000 / $3,500',
+      startingPrice: '₹2,199 / $26',
       tier: 'Luxury',
       dailyEstimate: '₹70,000 / $840 per day',
       accommodation: 'Opera House-view suite at Park Hyatt Sydney / Crown Towers',
@@ -3692,7 +3692,7 @@ export const DESTINATIONS: Destination[] = [
     reviewsCount: 410,
     bestTimeToVisit: 'October – April',
     averageTemperature: '22°C / 72°F',
-    startingPrice: '₹2,60,000 / $3,100',
+    startingPrice: '₹1,999 / $24',
     vibe: ['Laneway Art', 'Coffee Culture', 'Yarra Vineyards', 'Victorian Elegance'],
     highlights: ['Private barista masterclass & hidden laneway street art tour', 'Helicopter flight to Yarra Valley winery estate lunch', 'Great Ocean Road private scenic coastal drive'],
     topAttractions: [
@@ -3709,7 +3709,7 @@ export const DESTINATIONS: Destination[] = [
       culturalTraditions: ['National Gallery of Victoria arts exhibitions and Melbourne Cup festival.']
     },
     estimatedBudget: {
-      startingPrice: '₹2,60,000 / $3,100',
+      startingPrice: '₹1,999 / $24',
       tier: 'Luxury',
       dailyEstimate: '₹62,000 / $740 per day',
       accommodation: 'Luxury suite at The Ritz-Carlton Melbourne / Crown Towers',
@@ -3741,7 +3741,7 @@ export const DESTINATIONS: Destination[] = [
     reviewsCount: 460,
     bestTimeToVisit: 'May – November',
     averageTemperature: '26°C / 79°F',
-    startingPrice: '₹3,60,000 / $4,300',
+    startingPrice: '₹2,299 / $28',
     vibe: ['Coral Reef Wonder', 'Silica Beach', 'Seaplane Flights', 'Private Island Luxury'],
     highlights: ['Private seaplane flight over Heart Reef with Whitehaven landing', 'Exclusive luxury catamaran dive & snorkel charter to outer reefs', 'Private island retreat on Hayman or Lizard Island'],
     topAttractions: [
@@ -3758,7 +3758,7 @@ export const DESTINATIONS: Destination[] = [
       culturalTraditions: ['Great Barrier Reef Marine Park conservation and Indigenous sea country lore.']
     },
     estimatedBudget: {
-      startingPrice: '₹3,60,000 / $4,300',
+      startingPrice: '₹2,299 / $28',
       tier: 'Ultra-Luxe',
       dailyEstimate: '₹88,000 / $1,050 per day',
       accommodation: 'Luxury private beach pavilion on Qualia Hamilton Island / InterContinental Hayman',
@@ -3790,7 +3790,7 @@ export const DESTINATIONS: Destination[] = [
     reviewsCount: 440,
     bestTimeToVisit: 'Dec – Mar (Summer) / Jun – Sep (Skiing)',
     averageTemperature: '22°C / 72°F (Summer)',
-    startingPrice: '₹3,20,000 / $3,850',
+    startingPrice: '₹2,199 / $26',
     vibe: ['Adventure Capital', 'Milford Sound Fjords', 'Southern Alps', 'Alpine Pinot Noir'],
     highlights: ['Helicopter flight to Milford Sound with glacier snow landing', 'Private jet boat adventure through Dart River wilderness', 'Central Otago boutique winery tour and Pinot Noir tasting'],
     topAttractions: [
@@ -3807,7 +3807,7 @@ export const DESTINATIONS: Destination[] = [
       culturalTraditions: ['Maori cultural pounamu greenstone carving and Southern Alps alpine lore.']
     },
     estimatedBudget: {
-      startingPrice: '₹3,20,000 / $3,850',
+      startingPrice: '₹2,199 / $26',
       tier: 'Luxury',
       dailyEstimate: '₹76,000 / $910 per day',
       accommodation: 'Luxury lakefront lodge suite at Matakauri Lodge / Eichardt’s Private Hotel',

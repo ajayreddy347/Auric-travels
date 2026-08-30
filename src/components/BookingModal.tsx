@@ -193,7 +193,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
   let finalTotal = 0;
 
   if (bookingType === 'stay') {
-    const rawRateINR = (effectiveStayItem?.pricePerNightINR || customPriceNum || 35000) * (currentRoom.priceMultiplier || 1.0);
+    const rawRateINR = (effectiveStayItem?.pricePerNightINR || customPriceNum || 1199) * (currentRoom.priceMultiplier || 1.0);
     const rawRateUSD = (effectiveStayItem?.pricePerNightUSD || Math.round(rawRateINR / 83.5)) * (currentRoom.priceMultiplier || 1.0);
     basePricePerUnit = currency === 'INR' ? rawRateINR : rawRateUSD;
     totalBaseAmount = basePricePerUnit * Math.max(1, nightsCount);

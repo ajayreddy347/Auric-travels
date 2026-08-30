@@ -19,21 +19,21 @@ export const LUXURY_STAYS: LuxuryStayItem[] = [
       'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=1200&q=80',
       'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80'
     ],
-    pricePerNightINR: 58000,
-    pricePerNightUSD: 700,
-    startingPriceDisplay: '₹58,000 / $700 per night',
+    pricePerNightINR: 1499,
+    pricePerNightUSD: 18,
+    startingPriceDisplay: '₹1,499 / $18 per night',
     badge: 'Royal Island Palace',
     roomTypes: [
       {
         name: 'Grand Royal Lake Suite',
         description: 'Historic Mewar suite featuring stained-glass archways, antique frescoes, private jharokha balcony over water, and 24-hr royal butler.',
-        priceMultiplier: 1.5,
+        priceMultiplier: 1.35,
         image: 'https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=800&q=80'
       },
       {
         name: 'Palace Lake View Chamber',
         description: 'Regal room with direct panoramic view of the City Palace complex illuminated across calm lake waters.',
-        priceMultiplier: 1.2,
+        priceMultiplier: 1.18,
         image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80'
       },
       {
@@ -73,21 +73,21 @@ export const LUXURY_STAYS: LuxuryStayItem[] = [
       'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=1200&q=80',
       'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80'
     ],
-    pricePerNightINR: 36000,
-    pricePerNightUSD: 435,
-    startingPriceDisplay: '₹36,000 / $435 per night',
+    pricePerNightINR: 1199,
+    pricePerNightUSD: 14,
+    startingPriceDisplay: '₹1,199 / $14 per night',
     badge: 'Ayurvedic Sanctuary',
     roomTypes: [
       {
         name: 'Private Luxury Kettuvallam Suite',
         description: 'Traditional thatched wooden houseboat with private captain, personal chef, AC bedroom, and open sun deck.',
-        priceMultiplier: 1.45,
+        priceMultiplier: 1.3,
         image: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=800&q=80'
       },
       {
         name: 'Heritage Lake Villa with Private Pool',
         description: 'Reconstructed 200-year-old traditional Illam villa with open-to-sky courtyard and plunge pool.',
-        priceMultiplier: 1.25,
+        priceMultiplier: 1.15,
         image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80'
       },
       {
@@ -126,15 +126,15 @@ export const LUXURY_STAYS: LuxuryStayItem[] = [
       'https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?auto=format&fit=crop&w=1200&q=80',
       'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80'
     ],
-    pricePerNightINR: 52000,
-    pricePerNightUSD: 625,
-    startingPriceDisplay: '₹52,000 / $625 per night',
+    pricePerNightINR: 1299,
+    pricePerNightUSD: 16,
+    startingPriceDisplay: '₹1,299 / $16 per night',
     badge: 'Himalayan Luxury Glamping',
     roomTypes: [
       {
         name: 'Presidential Tented Suite',
         description: 'Triple-canopied canvas suite with central heating, private dining deck, teak four-poster bed, and personal butler.',
-        priceMultiplier: 1.4,
+        priceMultiplier: 1.35,
         image: 'https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?auto=format&fit=crop&w=800&q=80'
       },
       {
@@ -174,15 +174,15 @@ export const LUXURY_STAYS: LuxuryStayItem[] = [
       'https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1200&q=80',
       'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=1200&q=80'
     ],
-    pricePerNightINR: 38500,
-    pricePerNightUSD: 465,
-    startingPriceDisplay: '₹38,500 / $465 per night',
+    pricePerNightINR: 1099,
+    pricePerNightUSD: 13,
+    startingPriceDisplay: '₹1,099 / $13 per night',
     badge: 'Palace Heritage',
     roomTypes: [
       {
         name: 'Jal Mahal (Private Pool Villa)',
         description: 'Exclusive water palace pavilion with a private heated plunge pool, personal dining sala, and royal stone courtyard.',
-        priceMultiplier: 1.45,
+        priceMultiplier: 1.35,
         image: 'https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=800&q=80'
       },
       {
@@ -229,21 +229,21 @@ export const LUXURY_STAYS: LuxuryStayItem[] = [
       'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80',
       'https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=1200&q=80'
     ],
-    pricePerNightINR: 28500,
-    pricePerNightUSD: 345,
-    startingPriceDisplay: '₹28,500 / $345 per night',
+    pricePerNightINR: 899,
+    pricePerNightUSD: 11,
+    startingPriceDisplay: '₹899 / $11 per night',
     badge: 'Rainforest Sanctuary',
     roomTypes: [
       {
         name: 'Eden Lotus Villa (Private Jacuzzi)',
         description: 'Private clifftop cottage with an outdoor heated cedar jacuzzi overlooking cascading mountain waterfalls.',
-        priceMultiplier: 1.5,
+        priceMultiplier: 1.35,
         image: 'https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=800&q=80'
       },
       {
         name: 'Luxury Suite Cottage',
         description: 'Two-tier hardwood cottage floating above plantation canopy with panoramic mist-shrouded valley sundeck.',
-        priceMultiplier: 1.2,
+        priceMultiplier: 1.18,
         image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80'
       },
       {
@@ -284,15 +284,15 @@ export const LUXURY_STAYS: LuxuryStayItem[] = [
       'https://images.unsplash.com/photo-1561731216-c3a4d99437d5?auto=format&fit=crop&w=1200&q=80',
       'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1200&q=80'
     ],
-    pricePerNightINR: 42000,
-    pricePerNightUSD: 510,
-    startingPriceDisplay: '₹42,000 / $510 per night',
+    pricePerNightINR: 1149,
+    pricePerNightUSD: 14,
+    startingPriceDisplay: '₹1,149 / $14 per night',
     badge: 'Jungle Reserve',
     roomTypes: [
       {
         name: 'Pool Reserve Villa',
         description: 'Palatial thatched villa featuring an internal courtyard, heated swimming pool, and riverside sit-out.',
-        priceMultiplier: 1.4,
+        priceMultiplier: 1.3,
         image: 'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=800&q=80'
       },
       {
@@ -338,15 +338,15 @@ export const LUXURY_STAYS: LuxuryStayItem[] = [
       'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80',
       'https://images.unsplash.com/photo-1512353087810-25dfcd100962?auto=format&fit=crop&w=1200&q=80'
     ],
-    pricePerNightINR: 32000,
-    pricePerNightUSD: 390,
-    startingPriceDisplay: '₹32,000 / $390 per night',
+    pricePerNightINR: 799,
+    pricePerNightUSD: 10,
+    startingPriceDisplay: '₹799 / $10 per night',
     badge: 'Coastal Clifftop',
     roomTypes: [
       {
         name: 'Grand Ocean Panorama Suite',
         description: 'Top-tier cliff suite with wrap-around balconies offering 270-degree Arabian Sea sunsets.',
-        priceMultiplier: 1.35,
+        priceMultiplier: 1.3,
         image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80'
       },
       {
@@ -385,15 +385,15 @@ export const LUXURY_STAYS: LuxuryStayItem[] = [
       'https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=1200&q=80',
       'https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=1200&q=80'
     ],
-    pricePerNightINR: 26000,
-    pricePerNightUSD: 315,
-    startingPriceDisplay: '₹26,000 / $315 per night',
+    pricePerNightINR: 849,
+    pricePerNightUSD: 10,
+    startingPriceDisplay: '₹849 / $10 per night',
     badge: 'Maharaja Residence',
     roomTypes: [
       {
         name: 'Viceroy Presidential Suite',
         description: 'Ornate multi-room royal suite with original Belgian chandeliers, carved four-poster beds, and heritage furnishings.',
-        priceMultiplier: 1.5,
+        priceMultiplier: 1.35,
         image: 'https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=800&q=80'
       },
       {
@@ -434,15 +434,15 @@ export const LUXURY_STAYS: LuxuryStayItem[] = [
       'https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=80',
       'https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=1200&q=80'
     ],
-    pricePerNightINR: 95000,
-    pricePerNightUSD: 1150,
-    startingPriceDisplay: '₹95,000 / $1,150 per night',
+    pricePerNightINR: 2199,
+    pricePerNightUSD: 26,
+    startingPriceDisplay: '₹2,199 / $26 per night',
     badge: 'Mediterranean Icon',
     roomTypes: [
       {
         name: 'Sea View Suite with Private Balcony',
         description: 'Handmade Vietri tile floors, antique furnishings, and private balcony overlooking Positano bay.',
-        priceMultiplier: 1.4,
+        priceMultiplier: 1.35,
         image: 'https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=800&q=80'
       },
       {
@@ -481,15 +481,15 @@ export const LUXURY_STAYS: LuxuryStayItem[] = [
       'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1200&q=80',
       'https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=1200&q=80'
     ],
-    pricePerNightINR: 78000,
-    pricePerNightUSD: 940,
-    startingPriceDisplay: '₹78,000 / $940 per night',
+    pricePerNightINR: 1899,
+    pricePerNightUSD: 23,
+    startingPriceDisplay: '₹1,899 / $23 per night',
     badge: 'Zen Ryokan',
     roomTypes: [
       {
         name: 'Pavilion Tsukikusa (Riverside Tatami)',
         description: 'Traditional tatami pavilion with woodblock-printed Karakami wallpaper and cedar river views.',
-        priceMultiplier: 1.35,
+        priceMultiplier: 1.3,
         image: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=800&q=80'
       },
       {
@@ -527,15 +527,15 @@ export const LUXURY_STAYS: LuxuryStayItem[] = [
     gallery: [
       'https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&w=1200&q=80'
     ],
-    pricePerNightINR: 88000,
-    pricePerNightUSD: 1060,
-    startingPriceDisplay: '₹88,000 / $1,060 per night',
+    pricePerNightINR: 2399,
+    pricePerNightUSD: 29,
+    startingPriceDisplay: '₹2,399 / $29 per night',
     badge: 'Alpine Grand Luxury',
     roomTypes: [
       {
         name: 'Gemsstock Suite with Matterhorn Balcony',
         description: 'Fireplace suite with freestanding stone bathtub, Hästens bed, and panoramic snow summits.',
-        priceMultiplier: 1.5,
+        priceMultiplier: 1.35,
         image: 'https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&w=800&q=80'
       },
       {
@@ -574,9 +574,9 @@ export const LUXURY_STAYS: LuxuryStayItem[] = [
       'https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1200&q=80',
       'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1200&q=80'
     ],
-    pricePerNightINR: 145000,
-    pricePerNightUSD: 1750,
-    startingPriceDisplay: '₹1,45,000 / $1,750 per night',
+    pricePerNightINR: 2499,
+    pricePerNightUSD: 30,
+    startingPriceDisplay: '₹2,499 / $30 per night',
     badge: 'Ultra-Luxe Safari Manor',
     roomTypes: [
       {
@@ -620,21 +620,21 @@ export const LUXURY_STAYS: LuxuryStayItem[] = [
     gallery: [
       'https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=1200&q=80'
     ],
-    pricePerNightINR: 72000,
-    pricePerNightUSD: 870,
-    startingPriceDisplay: '₹72,000 / $870 per night',
+    pricePerNightINR: 1999,
+    pricePerNightUSD: 24,
+    startingPriceDisplay: '₹1,999 / $24 per night',
     badge: 'Caldera Sunset Suites',
     roomTypes: [
       {
         name: 'Epitome 2-Bedroom Villa with Pool',
         description: 'Spacious stone villa with private infinity pool, outdoor lounge, and unobstructed Aegean sunset.',
-        priceMultiplier: 1.6,
+        priceMultiplier: 1.35,
         image: 'https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=800&q=80'
       },
       {
         name: 'Hideaway Villa with Private Pool',
         description: 'Minimalist volcanic stone architecture featuring outdoor daybed and heated plunge pool.',
-        priceMultiplier: 1.25,
+        priceMultiplier: 1.18,
         image: 'https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=800&q=80'
       },
       {
@@ -672,21 +672,21 @@ export const LUXURY_STAYS: LuxuryStayItem[] = [
     gallery: [
       'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1200&q=80'
     ],
-    pricePerNightINR: 65000,
-    pricePerNightUSD: 780,
-    startingPriceDisplay: '₹65,000 / $780 per night',
+    pricePerNightINR: 1599,
+    pricePerNightUSD: 19,
+    startingPriceDisplay: '₹1,599 / $19 per night',
     badge: 'River Reserve',
     roomTypes: [
       {
         name: 'Mandapa 3-Bedroom Pool Villa',
         description: 'Massive private estate villa on the riverbank with private 30-meter pool and Patih butler service.',
-        priceMultiplier: 2.2,
+        priceMultiplier: 1.4,
         image: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=800&q=80'
       },
       {
         name: 'Riverfront Pool Villa',
         description: 'Private walled sanctuary with personal pool directly listening to rushing Ayung waters.',
-        priceMultiplier: 1.35,
+        priceMultiplier: 1.2,
         image: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=800&q=80'
       },
       {
