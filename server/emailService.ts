@@ -3,21 +3,24 @@ import fs from 'fs';
 import path from 'path';
 
 export interface EmailConfig {
-  host: string;
-  port: number;
-  secure: boolean;
-  user: string;
-  pass: string;
+  provider: 'resend' | 'sendgrid' | 'smtp' | 'none';
+  resendApiKey?: string;
+  sendgridApiKey?: string;
+  host?: string;
+  port?: number;
+  secure?: boolean;
+  user?: string;
+  pass?: string;
   from: string;
   isConfigured: boolean;
 }
 
 function cleanVal(v: string | undefined): string {
   if (!v) return '';
-  return v.trim().replace(/^[\"']|[\"']$/g, '').trim();
+  return v.trim().replace(/^["']|["']$/g, '').trim();
 }
 
-export function getEmailConfig(): EmailConfig {
+function loadEnvMap(): Record<string, string> {
   const envMap: Record<string, string> = {};
   const rootDir = process.cwd();
   const envFiles = [
@@ -37,7 +40,7 @@ export function getEmailConfig(): EmailConfig {
           if (eqIdx !== -1) {
             const key = trimmed.slice(0, eqIdx).trim();
             let val = trimmed.slice(eqIdx + 1).trim();
-            val = val.replace(/^[\"']|[\"']$/g, '').trim();
+            val = val.replace(/^["']|["']$/g, '').trim();
             if (val) {
               envMap[key] = val;
             }
@@ -48,7 +51,14 @@ export function getEmailConfig(): EmailConfig {
       }
     }
   }
+  return envMap;
+}
 
+export function getEmailConfig(): EmailConfig {
+  const envMap = loadEnvMap();
+
+  const resendApiKey = cleanVal(envMap.RESEND_API_KEY || process.env.RESEND_API_KEY);
+  const sendgridApiKey = cleanVal(envMap.SENDGRID_API_KEY || process.env.SENDGRID_API_KEY);
   const host = cleanVal(envMap.SMTP_HOST || process.env.SMTP_HOST);
   const port = parseInt(cleanVal(envMap.SMTP_PORT || process.env.SMTP_PORT) || '587', 10);
   const user = cleanVal(envMap.SMTP_USER || process.env.SMTP_USER || envMap.SMTP_USERNAME || process.env.SMTP_USERNAME);
@@ -56,26 +66,59 @@ export function getEmailConfig(): EmailConfig {
   const from = cleanVal(envMap.SMTP_FROM || process.env.SMTP_FROM || envMap.EMAIL_FROM || process.env.EMAIL_FROM) || '"Auric Travels Concierge" <concierge@aurictravels.com>';
   const secure = port === 465 || cleanVal(envMap.SMTP_SECURE || process.env.SMTP_SECURE) === 'true';
 
+  if (resendApiKey) {
+    return {
+      provider: 'resend',
+      resendApiKey,
+      from: from || 'Auric Travels <onboarding@resend.dev>',
+      isConfigured: true,
+    };
+  }
+
+  if (sendgridApiKey) {
+    return {
+      provider: 'sendgrid',
+      sendgridApiKey,
+      from,
+      isConfigured: true,
+    };
+  }
+
+  if (host && user && pass) {
+    return {
+      provider: 'smtp',
+      host,
+      port,
+      secure,
+      user,
+      pass,
+      from,
+      isConfigured: true,
+    };
+  }
+
   return {
-    host,
-    port,
-    secure,
-    user,
-    pass,
+    provider: 'none',
     from,
-    isConfigured: Boolean(host && user && pass),
+    isConfigured: false,
   };
 }
 
+/**
+ * Sends a password reset email using the fastest and most reliable available provider:
+ * 1. Resend HTTP API (HTTPS port 443 — Recommended for Render, zero TCP timeout risk)
+ * 2. SendGrid HTTP API (HTTPS port 443)
+ * 3. Direct SMTP (with strict 5-second socket timeouts to prevent client hangs)
+ */
 export async function sendPasswordResetEmail(
   toEmail: string,
   _recipientName: string,
   resetUrl: string,
   expiresMinutes: number = 15
-): Promise<{ success: boolean; error?: string; messageId?: string }> {
+): Promise<{ success: boolean; error?: string; messageId?: string; provider?: string }> {
   const config = getEmailConfig();
 
-  // Bulletproof HTML email with solid table button and explicit fallback link
+  // Solid gold table button HTML template for maximum email client compatibility
   const htmlContent = `
 <!DOCTYPE html>
 <html lang="en">
@@ -172,47 +215,151 @@ This link expires in ${expiresMinutes} minutes.
 If you did not request this, you can safely ignore this email.
   `.trim();
 
-  if (!config.isConfigured) {
-    console.warn('\n[Email Service Notice]: SMTP credentials are not configured in .env.');
-    console.log(`[Generated Reset Link for ${toEmail}]:\n${resetUrl}\n`);
-    return {
-      success: false,
-      error: 'SMTP email provider is not configured in .env',
-    };
+  // --- 1. RESEND HTTP REST API (HTTPS / Port 443 — Ideal for Render) ---
+  if (config.provider === 'resend' && config.resendApiKey) {
+    try {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 6000); // 6s strict timeout
+
+      // Ensure valid sender format for Resend
+      let fromAddress = config.from;
+      if (!fromAddress || fromAddress.includes('concierge@aurictravels.com')) {
+        fromAddress = 'Auric Travels <onboarding@resend.dev>';
+      }
+
+      const res = await fetch('https://api.resend.com/emails', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${config.resendApiKey}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          from: fromAddress,
+          to: [toEmail],
+          subject: 'Auric Travels - Password Reset Request',
+          html: htmlContent,
+          text: textContent,
+        }),
+        signal: controller.signal,
+      });
+
+      clearTimeout(timeoutId);
+
+      if (!res.ok) {
+        const errBody = await res.text();
+        throw new Error(`Resend API HTTP ${res.status}: ${errBody}`);
+      }
+
+      const data = (await res.json()) as any;
+      console.log(`[Email Service - Resend]: Password reset email dispatched to ${toEmail} (ID: ${data.id})`);
+      return {
+        success: true,
+        messageId: data.id,
+        provider: 'resend',
+      };
+    } catch (err: any) {
+      console.error(`[Email Service - Resend Error]: Failed to send to ${toEmail}:`, err.message);
+      // Fall through to log reset link
+    }
   }
 
-  try {
-    const transporter = nodemailer.createTransport({
-      host: config.host,
-      port: config.port,
-      secure: config.secure,
-      auth: {
-        user: config.user,
-        pass: config.pass,
-      },
-      tls: {
-        rejectUnauthorized: false,
-      },
-    });
+  // --- 2. SENDGRID HTTP REST API (HTTPS / Port 443) ---
+  if (config.provider === 'sendgrid' && config.sendgridApiKey) {
+    try {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 6000);
 
-    const info = await transporter.sendMail({
-      from: config.from,
-      to: toEmail,
-      subject: 'Auric Travels - Password Reset Request',
-      text: textContent,
-      html: htmlContent,
-    });
+      const res = await fetch('https://api.sendgrid.com/v3/mail/send', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${config.sendgridApiKey}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          personalizations: [{ to: [{ email: toEmail }] }],
+          from: { email: config.from.replace(/.*<([^>]+)>.*/, '$1') || 'concierge@aurictravels.com', name: 'Auric Travels' },
+          subject: 'Auric Travels - Password Reset Request',
+          content: [
+            { type: 'text/plain', value: textContent },
+            { type: 'text/html', value: htmlContent },
+          ],
+        }),
+        signal: controller.signal,
+      });
 
-    console.log(`[Email Service]: Password reset email dispatched to ${toEmail} (Message ID: ${info.messageId})`);
-    return {
-      success: true,
-      messageId: info.messageId,
-    };
-  } catch (err: any) {
-    console.error(`[Email Service Error]: Failed to send email to ${toEmail}:`, err.message);
-    return {
-      success: false,
-      error: err.message || 'SMTP transmission failure',
-    };
+      clearTimeout(timeoutId);
+
+      if (res.status === 202 || res.status === 200) {
+        console.log(`[Email Service - SendGrid]: Password reset email dispatched to ${toEmail}`);
+        return {
+          success: true,
+          provider: 'sendgrid',
+        };
+      } else {
+        const errBody = await res.text();
+        throw new Error(`SendGrid HTTP ${res.status}: ${errBody}`);
+      }
+    } catch (err: any) {
+      console.error(`[Email Service - SendGrid Error]: Failed to send to ${toEmail}:`, err.message);
+    }
   }
+
+  // --- 3. SMTP TRANSPORT (With strict connection & socket timeouts) ---
+  if (config.provider === 'smtp' && config.host && config.user && config.pass) {
+    try {
+      const transporter = nodemailer.createTransport({
+        host: config.host,
+        port: config.port || 587,
+        secure: config.secure || false,
+        auth: {
+          user: config.user,
+          pass: config.pass,
+        },
+        connectionTimeout: 4000, // 4s timeout connecting to host
+        greetingTimeout: 4000,   // 4s timeout waiting for SMTP greeting
+        socketTimeout: 5000,     // 5s timeout on socket operations
+        tls: {
+          rejectUnauthorized: false,
+        },
+      });
+
+      // Wrap in strict 6s overall timeout promise
+      const sendPromise = transporter.sendMail({
+        from: config.from,
+        to: toEmail,
+        subject: 'Auric Travels - Password Reset Request',
+        text: textContent,
+        html: htmlContent,
+      });
+
+      const timeoutPromise = new Promise<never>((_, reject) =>
+        setTimeout(() => reject(new Error('SMTP Connection timed out (outbound TCP port blocked)')), 6000)
+      );
+
+      const info = await Promise.race([sendPromise, timeoutPromise]);
+      console.log(`[Email Service - SMTP]: Password reset email dispatched to ${toEmail} (ID: ${info.messageId})`);
+      return {
+        success: true,
+        messageId: info.messageId,
+        provider: 'smtp',
+      };
+    } catch (err: any) {
+      console.error(`[Email Service - SMTP Error]: Failed to send email to ${toEmail}:`, err.message);
+      console.warn('[Email Service Notice]: If deployed on Render/Cloud, outbound SMTP ports (587/465) are often blocked by the host. Set RESEND_API_KEY to use HTTP API delivery.');
+    }
+  }
+
+  // --- 4. SECURE CONSOLE LOGGING (Fallback for Render logs & testing) ---
+  console.log(`\n================================================================`);
+  console.log(`[PASSWORD RESET LINK GENERATED]`);
+  console.log(`User: ${toEmail}`);
+  console.log(`Reset URL: ${resetUrl}`);
+  console.log(`Expires: In ${expiresMinutes} minutes`);
+  console.log(`================================================================\n`);
+
+  return {
+    success: false,
+    error: 'Email delivery provider unreachable or not configured. Reset link generated in server logs.',
+    provider: config.provider,
+  };
 }

@@ -488,12 +488,16 @@ app.post('/api/auth/forgot-password', async (req, res) => {
       // 3. Store hash in PostgreSQL / resilient store
       await PasswordResetRepository.createResetToken(userRecord.id, tokenHash, expiresAt);
 
-      // 4. Construct luxury reset link
-      const baseUrl = `${req.protocol}://${req.get('host')}`;
+      // 4. Construct luxury reset link using production APP_URL or request host
+      const appUrlEnv = process.env.APP_URL ? process.env.APP_URL.trim().replace(/\/+$/, '') : '';
+      const baseUrl = appUrlEnv || `${req.protocol}://${req.get('host')}`;
       const resetLink = `${baseUrl}/?reset_token=${rawToken}`;
 
-      // 5. Dispatch email via SMTP provider (e.g. Gmail / SendGrid / Amazon SES)
-      await sendPasswordResetEmail(userRecord.email, userRecord.name, resetLink, 15);
+      // 5. Dispatch email via transactional provider (Resend HTTP / SendGrid HTTP / SMTP)
+      // Wrapped in non-blocking try-catch so network latency never blocks client HTTP response
+      sendPasswordResetEmail(userRecord.email, userRecord.name, resetLink, 15).catch((emailErr) => {
+        console.error('[Forgot Password Background Email Error]:', emailErr?.message || emailErr);
+      });
     }
 
     // 6. Always return generic constant message (enumeration protection)
@@ -518,6 +522,9 @@ app.get('/api/auth/email/diagnostic', (_req, res) => {
   const config = getEmailConfig();
   return res.json({
     status: 'diagnostic',
+    provider: config.provider,
+    resend_api_configured: Boolean(config.resendApiKey),
+    sendgrid_api_configured: Boolean(config.sendgridApiKey),
     smtp_host: config.host ? 'configured' : 'missing',
     smtp_port: config.port,
     smtp_user: config.user ? 'configured' : 'missing',
