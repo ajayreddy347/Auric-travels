@@ -15,6 +15,7 @@ import {
 import { LUXURY_STAYS } from '../data/staysData';
 import { LuxuryStayItem } from '../types';
 import { SafeImage } from './SafeImage';
+import { SeoHead } from './SeoHead';
 
 interface StaysBrowserModalProps {
   isOpen: boolean;
@@ -81,6 +82,12 @@ export const StaysBrowserModal: React.FC<StaysBrowserModalProps> = ({
   return (
     <div className="fixed inset-0 z-50 overflow-y-auto bg-black/85 backdrop-blur-md flex items-center justify-center p-2 sm:p-4 md:p-6 animate-in fade-in duration-200">
       <div className="relative w-full max-w-5xl bg-[#0D0D0D] border border-[#C5A059]/40 rounded-3xl shadow-2xl overflow-hidden text-white my-auto max-h-[94vh] flex flex-col">
+        <SeoHead
+          title="Auric Luxury Stays & Sanctuaries — Auric Travels"
+          description="Discover palatial suites, serene tea estate manors, and private island villas curated by Auric Travels."
+          url="https://auric-travels-y948.onrender.com/#stay"
+        />
+
         {/* Top Header */}
         <div className="px-5 sm:px-6 py-4 border-b border-white/10 flex items-center justify-between bg-black/80 sticky top-0 z-20 backdrop-blur-sm shrink-0">
           <div className="flex items-center gap-3">

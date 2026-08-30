@@ -27,6 +27,7 @@ import { Destination, SelectedPlaceLocation } from '../types';
 import { SafeImage } from './SafeImage';
 import { DestinationMap } from './DestinationMap';
 import { storeSelectedTripLocation } from '../utils/tripGenerator';
+import { SeoHead } from './SeoHead';
 
 interface DestinationDetailViewProps {
   destination: Destination;
@@ -122,6 +123,13 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
       transition={{ duration: 0.3 }}
       className="space-y-10 pb-16"
     >
+      <SeoHead
+        title={`${currentDestination.name} — Luxury Bespoke Travel`}
+        description={currentDestination.overviewLong || currentDestination.description || currentDestination.tagline}
+        image={currentDestination.cinematicImage || currentDestination.image}
+        url={`https://auric-travels-y948.onrender.com/#destinations`}
+      />
+
       {/* 1. TOP BREADCRUMB / ACTION BAR */}
       <div className="flex flex-wrap items-center justify-between gap-4 border-b border-neutral-200 dark:border-white/10 pb-4">
         <button

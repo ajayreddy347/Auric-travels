@@ -21,6 +21,7 @@ import {
 import { motion, AnimatePresence } from 'motion/react';
 import { Destination } from '../types';
 import { SafeImage } from './SafeImage';
+import { SeoHead } from './SeoHead';
 
 interface DestinationModalProps {
   destination: Destination | null;
@@ -90,6 +91,13 @@ export const DestinationModal: React.FC<DestinationModalProps> = ({
           transition={{ duration: 0.25 }}
           className="relative w-full max-w-4xl bg-white dark:bg-[#0A0A0A] border border-neutral-200 dark:border-white/10 rounded-3xl overflow-hidden shadow-2xl my-auto text-neutral-900 dark:text-white max-h-[90vh] flex flex-col"
         >
+          <SeoHead
+            title={`${destination.name} — Luxury Bespoke Travel`}
+            description={destination.overviewLong || destination.description || destination.tagline}
+            image={destination.cinematicImage || destination.image}
+            url={`https://auric-travels-y948.onrender.com/#destinations`}
+          />
+
           {/* Top Floating Controls */}
           <div className="absolute top-4 right-4 z-20 flex items-center gap-2">
             <button

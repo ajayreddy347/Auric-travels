@@ -35,6 +35,7 @@ import { getStoredAuthToken } from '../utils/authStore';
 import { createBookingOnServer } from '../services/bookingsApi';
 import { formatCurrency, parsePriceToINR } from '../utils/currency';
 import { SafeImage } from './SafeImage';
+import { SeoHead } from './SeoHead';
 
 export interface BookingModalProps {
   isOpen: boolean;
@@ -353,6 +354,15 @@ export const BookingModal: React.FC<BookingModalProps> = ({
         className="relative w-full max-w-3xl bg-white dark:bg-[#0D0D0D] border border-neutral-200 dark:border-[#C5A059]/40 rounded-3xl shadow-2xl overflow-hidden text-neutral-900 dark:text-white my-auto max-h-[92vh] flex flex-col"
         id="auric-booking-modal"
       >
+        {effectiveItem && (
+          <SeoHead
+            title={`Reserve ${effectiveItem.name} — Auric Luxury`}
+            description={(effectiveItem as any).tagline || (effectiveItem as any).shortDescription || (effectiveItem as any).description || `Reserve your sanctuary with Auric Travels.`}
+            image={effectiveItem.image}
+            url={`https://auric-travels-y948.onrender.com/#bookings`}
+          />
+        )}
+
         {/* TOP HEADER */}
         <div className="px-6 py-4 border-b border-neutral-200 dark:border-white/10 flex items-center justify-between bg-neutral-50/90 dark:bg-black/60 sticky top-0 z-20 backdrop-blur-sm">
           <div className="flex items-center gap-2.5">

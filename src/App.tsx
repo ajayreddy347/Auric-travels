@@ -20,6 +20,7 @@ import { GlobalMapExplorer } from './components/GlobalMapExplorer';
 import { AuricAssistant } from './components/AuricAssistant';
 import { Footer } from './components/Footer';
 import { LegalModal, LegalDocType } from './components/LegalModal';
+import { SeoHead } from './components/SeoHead';
 import { DESTINATIONS } from './data/mockData';
 import { EXPERIENCES } from './data/experiencesData';
 import { LUXURY_STAYS } from './data/staysData';
@@ -543,12 +544,59 @@ export default function App() {
     ['udaipur', 'amalfi-coast', 'kyoto', 'serengeti', 'ladakh', 'santorini'].includes(d.id)
   );
 
+  const VIEW_SEO_CONFIG: Record<AppView, { title: string; description: string; url: string }> = {
+    home: {
+      title: 'Auric Travels — Discover. Explore. Plan. Travel.',
+      description: 'Auric Travels is your luxury bespoke travel companion. Discover handpicked global destinations, explore curated experiences, and design personalized journeys.',
+      url: 'https://auric-travels-y948.onrender.com/',
+    },
+    destinations: {
+      title: 'Luxury Sanctuaries & Destinations | Auric Travels',
+      description: 'Explore handpicked royal palaces, serene backwaters, and pristine global luxury sanctuaries with bespoke itineraries.',
+      url: 'https://auric-travels-y948.onrender.com/#destinations',
+    },
+    experiences: {
+      title: 'Curated Bespoke Experiences | Auric Travels',
+      description: 'Discover private solar yacht cruises, royal chef tastings, historian-guided palace tours, and exclusive luxury adventures.',
+      url: 'https://auric-travels-y948.onrender.com/#experiences',
+    },
+    planner: {
+      title: 'AI Luxury Trip Planner & Architect | Auric Travels',
+      description: 'Design bespoke luxury travel itineraries with minute-by-minute logistical elegance, private chauffeured transfers, and VIP access.',
+      url: 'https://auric-travels-y948.onrender.com/#planner',
+    },
+    saved: {
+      title: 'Saved Travel Vault | Auric Travels',
+      description: 'View and manage your saved luxury sanctuaries, bookmarked experiences, and customized trip itineraries in your personal Travel Vault.',
+      url: 'https://auric-travels-y948.onrender.com/#saved',
+    },
+    bookings: {
+      title: 'My Reservations & Stays | Auric Travels',
+      description: 'Manage your active luxury stay reservations, curated experience permits, and verified booking itineraries.',
+      url: 'https://auric-travels-y948.onrender.com/#bookings',
+    },
+    account: {
+      title: 'Member Sanctuary & Profile | Auric Travels',
+      description: 'Access your Auric Society membership privileges, bespoke travel preferences, and sovereign account settings.',
+      url: 'https://auric-travels-y948.onrender.com/#account',
+    },
+  };
+
+  const activeSeo = VIEW_SEO_CONFIG[currentView] || VIEW_SEO_CONFIG.home;
+
   return (
     <div
       className={`min-h-screen flex flex-col font-sans antialiased transition-colors duration-200 selection:bg-[#C5A059]/30 selection:text-[#F3E5AB] ${
         theme === 'dark' ? 'bg-[#050505] text-white' : 'bg-[#F8F7F4] text-neutral-900'
       }`}
     >
+      {/* Dynamic Route-Level SEO Meta Tags & OpenGraph Preview */}
+      <SeoHead
+        title={activeSeo.title}
+        description={activeSeo.description}
+        url={activeSeo.url}
+      />
+
       {/* 1. PERSISTENT PROFESSIONAL SIDEBAR NAVIGATION */}
       <Sidebar
         currentView={currentView}

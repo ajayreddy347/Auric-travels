@@ -29,6 +29,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { ExperienceItem, ExperienceCategoryType } from '../types';
 import { EXPERIENCES } from '../data/experiencesData';
 import { SafeImage } from './SafeImage';
+import { SeoHead } from './SeoHead';
 
 interface ExperienceDetailViewProps {
   experience: ExperienceItem;
@@ -129,6 +130,13 @@ export const ExperienceDetailView: React.FC<ExperienceDetailViewProps> = ({
       className="space-y-10 pb-16"
       id="experience-detail-view"
     >
+      <SeoHead
+        title={`${experience.name} — Curated Experience`}
+        description={experience.shortDescription || experience.description || `Explore ${experience.name} with Auric Travels.`}
+        image={experience.cinematicImage || experience.image}
+        url={`https://auric-travels-y948.onrender.com/#experiences`}
+      />
+
       {/* 1. TOP BREADCRUMB / ACTION BAR */}
       <div className="flex flex-wrap items-center justify-between gap-4 border-b border-neutral-200 dark:border-white/10 pb-4">
         <button
