@@ -33,7 +33,7 @@ interface DestinationDetailViewProps {
   destination: Destination;
   onBack: () => void;
   onAddToTrip: (destinationName: string) => void;
-  onBookStay?: (destinationName: string) => void;
+  onBookStay?: (destOrName: Destination | string) => void;
   isSaved: boolean;
   onToggleSave: (destId: string) => void;
 }
@@ -175,8 +175,8 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
           {onBookStay && (
             <button
               id="detail-book-stay-top"
-              onClick={() => onBookStay(destination.name)}
-              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#C5A059] hover:bg-[#F3E5AB] text-black text-xs font-bold uppercase tracking-wider transition-all shadow-md shadow-[#C5A059]/20"
+              onClick={() => onBookStay(currentDestination || destination)}
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#C5A059] hover:bg-[#F3E5AB] text-black text-xs font-bold uppercase tracking-wider transition-all shadow-md shadow-[#C5A059]/20 cursor-pointer"
             >
               <Sparkles className="w-3.5 h-3.5 text-black" />
               <span>Book Stay</span>
@@ -833,8 +833,8 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
           {onBookStay && (
             <button
               id="detail-book-stay-btn"
-              onClick={() => onBookStay(destination.name)}
-              className="px-5 py-3 rounded-2xl bg-[#C5A059] hover:bg-[#F3E5AB] text-black text-xs font-bold uppercase tracking-wider transition-all flex items-center justify-center gap-1.5 shadow-lg shadow-[#C5A059]/20"
+              onClick={() => onBookStay(currentDestination || destination)}
+              className="px-5 py-3 rounded-2xl bg-[#C5A059] hover:bg-[#F3E5AB] text-black text-xs font-bold uppercase tracking-wider transition-all flex items-center justify-center gap-1.5 shadow-lg shadow-[#C5A059]/20 cursor-pointer"
             >
               <Sparkles className="w-4 h-4 text-black" />
               <span>Book Luxury Stay</span>

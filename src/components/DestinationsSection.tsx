@@ -18,6 +18,7 @@ import {
   Globe,
   AlertCircle,
   RefreshCw,
+  Building,
 } from 'lucide-react';
 import { Destination, SelectedPlaceLocation } from '../types';
 import { motion, AnimatePresence } from 'motion/react';
@@ -721,18 +722,37 @@ export const DestinationsSection: React.FC<DestinationsSectionProps> = ({
                         <span className="text-sm font-bold text-neutral-900 dark:text-white font-mono">{dest.startingPrice}</span>
                       </div>
 
-                      {/* Required "Explore" Button */}
-                      <button
-                        id={`explore-btn-${dest.id}`}
-                        onClick={() => {
-                          setActiveDetailDest(dest);
-                          onSelectDestination(dest);
-                        }}
-                        className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#C5A059] hover:bg-[#F3E5AB] text-black text-xs font-bold uppercase tracking-wider transition-all group-hover:scale-105 shadow-md shadow-[#C5A059]/20"
-                      >
-                        <span>Explore</span>
-                        <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
-                      </button>
+                      <div className="flex items-center gap-2">
+                        {onBookStay && (
+                          <button
+                            id={`book-stay-card-${dest.id}`}
+                            type="button"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              onBookStay(dest);
+                            }}
+                            className="inline-flex items-center gap-1 px-3 py-2 rounded-xl border border-[#C5A059]/40 hover:bg-[#C5A059]/20 text-[#C5A059] dark:text-[#F3E5AB] text-xs font-semibold uppercase tracking-wider transition-all cursor-pointer"
+                            title={`Book Stay in ${dest.name}`}
+                          >
+                            <Building className="w-3.5 h-3.5" />
+                            <span className="hidden sm:inline">Book Stay</span>
+                          </button>
+                        )}
+
+                        {/* Required "Explore" Button */}
+                        <button
+                          id={`explore-btn-${dest.id}`}
+                          type="button"
+                          onClick={() => {
+                            setActiveDetailDest(dest);
+                            onSelectDestination(dest);
+                          }}
+                          className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#C5A059] hover:bg-[#F3E5AB] text-black text-xs font-bold uppercase tracking-wider transition-all group-hover:scale-105 shadow-md shadow-[#C5A059]/20 cursor-pointer"
+                        >
+                          <span>Explore</span>
+                          <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </motion.div>

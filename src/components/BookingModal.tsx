@@ -349,7 +349,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto bg-black/85 backdrop-blur-md flex items-center justify-center p-3 sm:p-4 md:p-6 animate-in fade-in duration-200">
+    <div className="fixed inset-0 z-[70] overflow-y-auto bg-black/85 backdrop-blur-md flex items-center justify-center p-3 sm:p-4 md:p-6 animate-in fade-in duration-200">
       <div
         className="relative w-full max-w-3xl bg-white dark:bg-[#0D0D0D] border border-neutral-200 dark:border-[#C5A059]/40 rounded-3xl shadow-2xl overflow-hidden text-neutral-900 dark:text-white my-auto max-h-[92vh] flex flex-col"
         id="auric-booking-modal"

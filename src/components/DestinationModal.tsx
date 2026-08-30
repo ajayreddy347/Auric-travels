@@ -28,7 +28,7 @@ interface DestinationModalProps {
   isOpen: boolean;
   onClose: () => void;
   onPlanTripForDestination: (destName: string) => void;
-  onBookStay?: (destName: string) => void;
+  onBookStay?: (destOrName: Destination | string) => void;
   isSaved: boolean;
   onToggleSave: (destId: string) => void;
 }
@@ -470,9 +470,9 @@ export const DestinationModal: React.FC<DestinationModalProps> = ({
                   id="modal-book-stay-btn"
                   onClick={() => {
                     onClose();
-                    onBookStay(destination.name);
+                    onBookStay(destination);
                   }}
-                  className="px-4 py-2 rounded-full bg-[#C5A059] hover:bg-[#F3E5AB] text-black font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-1.5 shadow-md shadow-[#C5A059]/20"
+                  className="px-4 py-2 rounded-full bg-[#C5A059] hover:bg-[#F3E5AB] text-black font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-1.5 shadow-md shadow-[#C5A059]/20 cursor-pointer"
                 >
                   <Sparkles className="w-3.5 h-3.5" />
                   <span>Book Stay</span>
