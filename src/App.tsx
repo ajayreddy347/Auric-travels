@@ -32,6 +32,7 @@ import { fetchDestinations } from './services/destinationsApi';
 import { fetchExperiences } from './services/experiencesApi';
 import { fetchUserBookings, ApiBookingRecord } from './services/bookingsApi';
 import { getStoredAuthToken } from './utils/authStore';
+import { parsePriceToINR } from './utils/currency';
 import {
   Sparkles,
   ArrowRight,
@@ -422,24 +423,166 @@ export default function App() {
     setCurrentView('home');
   };
 
-  // Open Booking for a Stay
-  const handleOpenBookStay = (destNameOrStay?: string | LuxuryStayItem) => {
+  // Open Booking for a Stay (supports direct Stay object, Destination object, or destination name string)
+  const handleOpenBookStay = (destNameOrStay?: string | LuxuryStayItem | Destination) => {
+    // 1. Direct object passed (LuxuryStayItem or Destination)
     if (typeof destNameOrStay === 'object' && destNameOrStay !== null) {
-      setBookingTargetItem(destNameOrStay);
+      if ('pricePerNightINR' in destNameOrStay || 'roomTypes' in destNameOrStay) {
+        setBookingTargetItem(destNameOrStay as LuxuryStayItem);
+        setBookingType('stay');
+        setIsBookingModalOpen(true);
+        return;
+      }
+
+      const destObj = destNameOrStay as Destination;
+      const stayMatch = LUXURY_STAYS.find(
+        (s) =>
+          s.destinationId === destObj.id ||
+          s.destinationName.toLowerCase().includes(destObj.name.toLowerCase()) ||
+          destObj.name.toLowerCase().includes(s.destinationName.toLowerCase()) ||
+          s.location.toLowerCase().includes(destObj.name.toLowerCase())
+      );
+      if (stayMatch) {
+        setBookingTargetItem(stayMatch);
+        setBookingType('stay');
+        setIsBookingModalOpen(true);
+        return;
+      }
+
+      const baseINR = parsePriceToINR(destObj.startingPrice) || 1199;
+      const baseUSD = Math.round(baseINR / 83.5) || 15;
+      const synthStay: LuxuryStayItem = {
+        id: `stay-${destObj.id || destObj.name.toLowerCase().replace(/[^a-z0-9]/g, '-')}`,
+        name: `${destObj.name} Sanctuary & Heritage Suites`,
+        tagline: destObj.tagline || `Curated boutique luxury retreat in ${destObj.name}`,
+        location: destObj.formattedAddress || `${destObj.name}, ${destObj.country}`,
+        destinationId: destObj.id,
+        destinationName: destObj.name,
+        region: destObj.region || 'India',
+        country: destObj.country || 'India',
+        rating: destObj.rating || 4.95,
+        reviewsCount: destObj.reviewsCount || 310,
+        image: destObj.cinematicImage || destObj.image || 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80',
+        gallery: destObj.gallery?.length ? destObj.gallery : [destObj.image],
+        pricePerNightINR: baseINR,
+        pricePerNightUSD: baseUSD,
+        startingPriceDisplay: `₹${baseINR.toLocaleString('en-IN')} / $${baseUSD} per night`,
+        badge: 'Curated Heritage Sanctuary',
+        roomTypes: [
+          {
+            name: 'Royal Heritage Suite',
+            description: 'Bespoke heritage suite with panoramic vistas, handcrafted furnishings, and private balcony.',
+            priceMultiplier: 1.35,
+            image: destObj.image,
+          },
+          {
+            name: 'Deluxe Sanctuary Chamber',
+            description: 'Spacious refined living quarters with artisan decor and luxury amenities.',
+            priceMultiplier: 1.0,
+            image: destObj.image,
+          }
+        ],
+        amenities: [
+          '24-Hour Private Concierge',
+          'Gourmet Breakfast Service',
+          'Chauffeured Local Excursions',
+          'High-Speed Wi-Fi',
+          'Signature Spa & Wellness',
+        ],
+        curatedHighlights: [
+          `Exclusive access to curated experiences in ${destObj.name}`,
+          'Private sunset dining in heritage courtyards',
+          'Dedicated local insider guide for hidden landmarks'
+        ]
+      };
+      setBookingTargetItem(synthStay);
       setBookingType('stay');
       setIsBookingModalOpen(true);
       return;
     }
 
-    if (typeof destNameOrStay === 'string') {
-      const match = LUXURY_STAYS.find(
+    // 2. String passed (destination name or stay name)
+    if (typeof destNameOrStay === 'string' && destNameOrStay.trim()) {
+      const q = destNameOrStay.toLowerCase().trim();
+      const firstWord = q.split(/[\s,&()]+/)[0];
+
+      // Match against LUXURY_STAYS
+      const stayMatch = LUXURY_STAYS.find(
         (s) =>
-          s.name.toLowerCase().includes(destNameOrStay.toLowerCase()) ||
-          s.destinationName.toLowerCase().includes(destNameOrStay.toLowerCase()) ||
-          s.location.toLowerCase().includes(destNameOrStay.toLowerCase())
+          s.id.toLowerCase() === q ||
+          s.name.toLowerCase().includes(q) ||
+          q.includes(s.name.toLowerCase()) ||
+          s.destinationName.toLowerCase().includes(q) ||
+          q.includes(s.destinationName.toLowerCase()) ||
+          s.destinationId.toLowerCase() === q ||
+          s.location.toLowerCase().includes(q) ||
+          (firstWord.length > 2 && (s.destinationName.toLowerCase().includes(firstWord) || s.name.toLowerCase().includes(firstWord) || s.location.toLowerCase().includes(firstWord)))
       );
-      if (match) {
-        setBookingTargetItem(match);
+      if (stayMatch) {
+        setBookingTargetItem(stayMatch);
+        setBookingType('stay');
+        setIsBookingModalOpen(true);
+        return;
+      }
+
+      // Match against destinations list
+      const allDests = destinations.length > 0 ? destinations : DESTINATIONS;
+      const matchedDest = allDests.find(
+        (d) =>
+          d.id.toLowerCase() === q ||
+          d.name.toLowerCase().includes(q) ||
+          q.includes(d.name.toLowerCase()) ||
+          (firstWord.length > 2 && d.name.toLowerCase().includes(firstWord))
+      );
+
+      if (matchedDest) {
+        const baseINR = parsePriceToINR(matchedDest.startingPrice) || 1199;
+        const baseUSD = Math.round(baseINR / 83.5) || 15;
+        const synthStay: LuxuryStayItem = {
+          id: `stay-${matchedDest.id || matchedDest.name.toLowerCase().replace(/[^a-z0-9]/g, '-')}`,
+          name: `${matchedDest.name} Sanctuary & Heritage Suites`,
+          tagline: matchedDest.tagline || `Curated boutique luxury retreat in ${matchedDest.name}`,
+          location: matchedDest.formattedAddress || `${matchedDest.name}, ${matchedDest.country}`,
+          destinationId: matchedDest.id,
+          destinationName: matchedDest.name,
+          region: matchedDest.region || 'India',
+          country: matchedDest.country || 'India',
+          rating: matchedDest.rating || 4.95,
+          reviewsCount: matchedDest.reviewsCount || 310,
+          image: matchedDest.cinematicImage || matchedDest.image || 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80',
+          gallery: matchedDest.gallery?.length ? matchedDest.gallery : [matchedDest.image],
+          pricePerNightINR: baseINR,
+          pricePerNightUSD: baseUSD,
+          startingPriceDisplay: `₹${baseINR.toLocaleString('en-IN')} / $${baseUSD} per night`,
+          badge: 'Curated Heritage Sanctuary',
+          roomTypes: [
+            {
+              name: 'Royal Heritage Suite',
+              description: 'Bespoke heritage suite with panoramic vistas, handcrafted furnishings, and private balcony.',
+              priceMultiplier: 1.35,
+              image: matchedDest.image,
+            },
+            {
+              name: 'Deluxe Sanctuary Chamber',
+              description: 'Spacious refined living quarters with artisan decor and luxury amenities.',
+              priceMultiplier: 1.0,
+              image: matchedDest.image,
+            }
+          ],
+          amenities: [
+            '24-Hour Private Concierge',
+            'Gourmet Breakfast Service',
+            'Chauffeured Local Excursions',
+            'High-Speed Wi-Fi',
+            'Signature Spa & Wellness',
+          ],
+          curatedHighlights: [
+            `Exclusive access to curated experiences in ${matchedDest.name}`,
+            'Private sunset dining in heritage courtyards',
+            'Dedicated local insider guide for hidden landmarks'
+          ]
+        };
+        setBookingTargetItem(synthStay);
         setBookingType('stay');
         setIsBookingModalOpen(true);
         return;
@@ -904,6 +1047,7 @@ export default function App() {
                   onClearFilter={() => setSearchFilter('')}
                   onAddToTrip={(destName) => handleOpenTripPlanner(destName)}
                   onOpenGlobalMap={() => setIsGlobalMapOpen(true)}
+                  onBookStay={handleOpenBookStay}
                 />
               </motion.div>
             )}

@@ -16,6 +16,8 @@ import { PasswordResetRepository } from './server/passwordResetRepository';
 import { sendPasswordResetEmail, getEmailConfig } from './server/emailService';
 import { BookingsRepository } from './server/bookingsRepository';
 import { LUXURY_STAYS } from './src/data/staysData';
+import { DESTINATIONS } from './src/data/mockData';
+import { parsePriceToINR } from './src/utils/currency';
 import { hashPassword, comparePassword, generateToken } from './server/authUtils';
 import { requireAuth, optionalAuth, AuthenticatedRequest } from './server/middleware/authMiddleware';
 import { testConnection } from './server/config/db';
@@ -1562,10 +1564,36 @@ app.post('/api/bookings', requireAuth, async (req: AuthenticatedRequest, res) =>
     if (effectiveStayId) {
       matchedStay = LUXURY_STAYS.find((s) => s.id === effectiveStayId || s.id.toLowerCase() === effectiveStayId.toLowerCase());
       if (!matchedStay) {
-        return res.status(400).json({
-          success: false,
-          error: `Validation error: Invalid stay_id '${effectiveStayId}'. Property was not found.`,
-        });
+        const cleanStayId = effectiveStayId.toLowerCase().replace(/^stay-/, '');
+        const matchedDest = DESTINATIONS.find(
+          (d) =>
+            d.id.toLowerCase() === cleanStayId ||
+            d.id.toLowerCase() === effectiveDestinationId.toLowerCase() ||
+            d.name.toLowerCase().includes(cleanStayId) ||
+            cleanStayId.includes(d.id.toLowerCase())
+        );
+
+        if (matchedDest) {
+          const baseINR = parsePriceToINR(matchedDest.startingPrice) || 1199;
+          const baseUSD = Math.round(baseINR / 83.5) || 15;
+          matchedStay = {
+            id: effectiveStayId,
+            name: `${matchedDest.name} Sanctuary & Heritage Suites`,
+            destinationId: matchedDest.id,
+            pricePerNightINR: baseINR,
+            pricePerNightUSD: baseUSD,
+            roomTypes: [
+              { name: 'Royal Heritage Suite', priceMultiplier: 1.35 },
+              { name: 'Deluxe Sanctuary Chamber', priceMultiplier: 1.0 },
+              { name: 'Signature Sanctuary Suite', priceMultiplier: 1.0 },
+            ]
+          };
+        } else {
+          return res.status(400).json({
+            success: false,
+            error: `Validation error: Invalid stay_id '${effectiveStayId}'. Property was not found.`,
+          });
+        }
       }
 
       // Validate Room Tier if provided

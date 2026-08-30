@@ -42,6 +42,7 @@ interface DestinationsSectionProps {
   onClearFilter?: () => void;
   onAddToTrip?: (destName: string) => void;
   onOpenGlobalMap?: () => void;
+  onBookStay?: (destinationNameOrStay: string | any) => void;
 }
 
 export const DestinationsSection: React.FC<DestinationsSectionProps> = ({
@@ -53,6 +54,7 @@ export const DestinationsSection: React.FC<DestinationsSectionProps> = ({
   onClearFilter,
   onAddToTrip,
   onOpenGlobalMap,
+  onBookStay,
 }) => {
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const [selectedRegion, setSelectedRegion] = useState<string>('All');
@@ -294,6 +296,7 @@ export const DestinationsSection: React.FC<DestinationsSectionProps> = ({
         <DestinationDetailView
           destination={activeDetailDest}
           onBack={() => setActiveDetailDest(null)}
+          onBookStay={onBookStay ? (destName) => onBookStay(destName || activeDetailDest) : undefined}
           onAddToTrip={(destName) => {
             if (onAddToTrip) {
               onAddToTrip(destName);

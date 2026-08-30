@@ -171,6 +171,18 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
             )}
           </button>
 
+          {/* Primary "Book Stay" Action Button */}
+          {onBookStay && (
+            <button
+              id="detail-book-stay-top"
+              onClick={() => onBookStay(destination.name)}
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#C5A059] hover:bg-[#F3E5AB] text-black text-xs font-bold uppercase tracking-wider transition-all shadow-md shadow-[#C5A059]/20"
+            >
+              <Sparkles className="w-3.5 h-3.5 text-black" />
+              <span>Book Stay</span>
+            </button>
+          )}
+
           {/* Primary "Add to Trip" Button */}
           <button
             id="detail-add-to-trip-top"
