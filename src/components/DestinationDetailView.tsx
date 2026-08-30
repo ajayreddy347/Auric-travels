@@ -45,22 +45,46 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
   isSaved,
   onToggleSave,
 }) => {
+  const [currentDestination, setCurrentDestination] = useState<Destination>(destination);
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   const [activeSection, setActiveSection] = useState<'overview' | 'map' | 'attractions' | 'things-to-do' | 'food-culture' | 'budget'>('overview');
   const [isAddedToTrip, setIsAddedToTrip] = useState(false);
   const [copied, setCopied] = useState(false);
 
   React.useEffect(() => {
+    setCurrentDestination(destination);
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
     document.documentElement.scrollTop = 0;
     document.body.scrollTop = 0;
     setActiveImageIndex(0);
     setActiveSection('overview');
+
+    // Dynamically fetch enriched Google Places photos from backend
+    if (destination?.id) {
+      fetch(`/api/destinations/${encodeURIComponent(destination.id)}/photos`)
+        .then((res) => res.json())
+        .then((data) => {
+          if (data && data.success && data.isFromPlacesApi) {
+            setCurrentDestination((prev) => ({
+              ...prev,
+              image: data.image || prev.image,
+              cinematicImage: data.cinematicImage || prev.cinematicImage,
+              gallery: Array.isArray(data.gallery) && data.gallery.length > 0 ? data.gallery : prev.gallery,
+              photoAttributions: data.photoAttributions || prev.photoAttributions,
+              googlePlaceId: data.googlePlaceId || prev.googlePlaceId,
+              googleMapsUri: data.googleMapsUri || prev.googleMapsUri,
+            }));
+          }
+        })
+        .catch(() => {
+          // Graceful fallback to initial static photos
+        });
+    }
   }, [destination?.id]);
 
   const images = [
-    destination.cinematicImage || destination.image,
-    ...destination.gallery.filter((g) => g !== destination.image),
+    currentDestination.cinematicImage || currentDestination.image,
+    ...currentDestination.gallery.filter((g) => g !== currentDestination.image),
   ];
 
   const handleShare = () => {
@@ -265,6 +289,45 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
             </div>
           </div>
         </div>
+
+        {/* Google Places Photo Attribution & Map Link */}
+        {((currentDestination.photoAttributions && currentDestination.photoAttributions.length > 0) || currentDestination.googleMapsUri) && (
+          <div className="px-6 py-2.5 bg-black/80 border-t border-white/5 flex flex-wrap items-center justify-between gap-3 text-[11px] text-gray-400">
+            <div className="flex items-center gap-2">
+              <span className="text-[#C5A059] font-mono">✦ Imagery:</span>
+              {currentDestination.photoAttributions && currentDestination.photoAttributions.length > 0 ? (
+                <span>
+                  Photos via Google Places &bull; Contributed by{' '}
+                  {currentDestination.photoAttributions.map((a, i) => (
+                    <span key={i}>
+                      {a.uri ? (
+                        <a href={a.uri} target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-[#C5A059] underline">
+                          {a.displayName}
+                        </a>
+                      ) : (
+                        <span className="text-gray-300">{a.displayName}</span>
+                      )}
+                      {i < currentDestination.photoAttributions!.length - 1 ? ', ' : ''}
+                    </span>
+                  ))}
+                </span>
+              ) : (
+                <span>Curated Sanctuary Visuals</span>
+              )}
+            </div>
+            {currentDestination.googleMapsUri && (
+              <a
+                href={currentDestination.googleMapsUri}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-xs text-[#C5A059] hover:text-[#F3E5AB] font-medium transition-colors"
+              >
+                <span>View on Google Maps</span>
+                <ChevronRight className="w-3.5 h-3.5" />
+              </a>
+            )}
+          </div>
+        )}
       </div>
 
       {/* 3. SECTION NAVIGATION PILLS */}

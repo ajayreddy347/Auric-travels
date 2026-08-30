@@ -70,6 +70,11 @@ export interface Destination {
   googlePlaceId?: string;
   googleMapsUri?: string;
   formattedAddress?: string;
+  photoAttributions?: {
+    displayName: string;
+    uri?: string;
+    photoUri?: string;
+  }[];
   sampleItinerary: {
     day: number;
     title: string;

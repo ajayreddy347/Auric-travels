@@ -20,6 +20,7 @@ import { hashPassword, comparePassword, generateToken } from './server/authUtils
 import { requireAuth, optionalAuth, AuthenticatedRequest } from './server/middleware/authMiddleware';
 import { testConnection } from './server/config/db';
 import { runMigrations } from './server/db/migrate';
+import { enrichDestinationWithPlacesPhotos, resolveDestinationPhotos } from './server/services/placesPhotoService';
 
 dotenv.config();
 
@@ -151,7 +152,7 @@ app.get('/api/destinations', async (req, res) => {
 
 /**
  * GET /api/destinations/:id
- * Fetches a single destination by ID or slug.
+ * Fetches a single destination by ID or slug with dynamic Places photos.
  */
 app.get('/api/destinations/:id', async (req, res) => {
   try {
@@ -166,9 +167,12 @@ app.get('/api/destinations/:id', async (req, res) => {
       });
     }
 
+    // Dynamically enrich with Google Places (New) photos
+    const enriched = await enrichDestinationWithPlacesPhotos(destination, GOOGLE_MAPS_API_KEY);
+
     return res.json({
       success: true,
-      destination,
+      destination: enriched,
       timestamp: new Date().toISOString(),
     });
   } catch (error: any) {
@@ -178,6 +182,41 @@ app.get('/api/destinations/:id', async (req, res) => {
       error: 'Failed to retrieve destination details',
       details: error?.message || 'Internal server error',
       destination: null,
+    });
+  }
+});
+
+/**
+ * GET /api/destinations/:id/photos
+ * Dedicated endpoint resolving real Google Places photos and attributions for any destination.
+ */
+app.get('/api/destinations/:id/photos', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const destination = await DestinationsRepository.getById(id);
+
+    if (!destination) {
+      return res.status(404).json({
+        success: false,
+        error: `Destination '${id}' not found`,
+      });
+    }
+
+    const photoResult = await resolveDestinationPhotos(destination, GOOGLE_MAPS_API_KEY);
+
+    return res.json({
+      success: true,
+      destinationId: destination.id,
+      destinationName: destination.name,
+      ...photoResult,
+      timestamp: new Date().toISOString(),
+    });
+  } catch (error: any) {
+    console.error(`[GET /api/destinations/${req.params.id}/photos Error]:`, error);
+    return res.status(500).json({
+      success: false,
+      error: 'Failed to resolve destination photos',
+      details: error?.message || 'Internal server error',
     });
   }
 });
