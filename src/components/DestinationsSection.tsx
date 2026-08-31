@@ -631,7 +631,7 @@ export const DestinationsSection: React.FC<DestinationsSectionProps> = ({
                   id={`destination-card-${dest.id}`}
                   initial={{ opacity: 0, y: 15 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.35, delay: idx * 0.05 }}
+                  transition={{ duration: 0.3, delay: Math.min(idx * 0.02, 0.25) }}
                   className="group relative flex flex-col rounded-3xl bg-white dark:bg-[#0D0D0D] border border-neutral-200 dark:border-white/10 hover:border-[#C5A059]/40 overflow-hidden transition-all duration-300 shadow-sm hover:shadow-xl flex-1 justify-between"
                 >
                   {/* Card Image Banner */}
@@ -745,7 +745,9 @@ export const DestinationsSection: React.FC<DestinationsSectionProps> = ({
                           type="button"
                           onClick={() => {
                             setActiveDetailDest(dest);
-                            onSelectDestination(dest);
+                            window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+                            document.documentElement.scrollTop = 0;
+                            document.body.scrollTop = 0;
                           }}
                           className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#C5A059] hover:bg-[#F3E5AB] text-black text-xs font-bold uppercase tracking-wider transition-all group-hover:scale-105 shadow-md shadow-[#C5A059]/20 cursor-pointer"
                         >
